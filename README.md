@@ -1,13 +1,13 @@
 ![ELTE MONOPOLY - SAVARIA EDITION](https://github.com/Hegylakok/monopoly/raw/main/res/logo.png "ELTE MONOPOLY - SAVARIA EDITION")
 
-## A Projektr<F1>l
+## A Projektről
 * asztali Java alkalmazás
 * Monopoly játék mintájára
 * tematika: Eötvös Loránd Tudományegyetem Savaria Egyetemi Központ
-* minden korosztály számára elérhet<F1>
+* minden korosztály számára elérhető
 * többjátékos
-* rövidített játékid<F1> => nagyobb játékélmény
-* fizet<F1>eszköz: kredit
+* rövidített játékidő => nagyobb játékélmény
+* fizetőeszköz: kredit
 * követelmények
    * felhasználóbarát felület
    * élményközpontúság
