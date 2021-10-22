@@ -15,7 +15,7 @@ public class Tabla extends javax.swing.JFrame {
      * Creates new form Tabla
      */
     public Tabla() {
-        initComponents();
+        initCompodsadasdanents();
     }
 
     /**
