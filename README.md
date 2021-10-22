@@ -1,4 +1,4 @@
-![ELTE MONOPOLY - SAVARIA EDITION](https://github.com/Hegylakok/monopoly/raw/main/res/logo.png "ELTE MONOPOLY - SAVARIA EDITION")
+![ELTE MONOPOLY - SAVARIA EDITION](https://github.com/Hegylakok/monopoly/raw/main/Mono/doc/logo.png "ELTE MONOPOLY - SAVARIA EDITION")
 
 ## A Projektről
 * asztali Java alkalmazás
