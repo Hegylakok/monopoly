@@ -5,17 +5,31 @@
  */
 package mono;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import java.util.Date;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
 /**
- *
+ * ArrayList használata a 128 bábuk indexelésére, hogy müködjön a netbeans formos rendszerével.
+ * Optimalizálható, hogy majd ne építse fel az ArrayList-eket minden frissítésnél.
+ * Lehet érdemes lenni szétbontani másik fájlba átláthatóság szempontjából.
  * @author dalos
  */
 public class Tabla extends javax.swing.JFrame {
+    
+    private int mouseX;
+    private int mouseY;
 
     /**
      * Creates new form Tabla
      */
     public Tabla() {
         initComponents();
+        buildCollections();
+        initTokens(); /* bábuk */
     }
 
     /**
@@ -156,9 +170,23 @@ public class Tabla extends javax.swing.JFrame {
         Sarga32 = new javax.swing.JLabel();
         Kek32 = new javax.swing.JLabel();
         Zold32 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         Tabla = new javax.swing.JLabel();
+        kilepesGomb = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
 
         jPanel1.setLayout(null);
 
@@ -675,10 +703,36 @@ public class Tabla extends javax.swing.JFrame {
         jPanel1.add(Zold32);
         Zold32.setBounds(540, 10, 28, 45);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(450, 480, 73, 70);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/neptunkartya.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(170, 160, 170, 100);
+
         Tabla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/tabla.png"))); // NOI18N
         Tabla.setText("jLabel1");
         jPanel1.add(Tabla);
         Tabla.setBounds(0, 0, 730, 723);
+
+        kilepesGomb.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        kilepesGomb.setText("Kilépés");
+        kilepesGomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kilepesGombActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -686,15 +740,101 @@ public class Tabla extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 348, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
+                .addComponent(kilepesGomb)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(kilepesGomb))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    int click = 0;
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        click++;
+        if(click == 1){
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
+        } else if(click == 2){
+
+            model.dobas();
+            int dobas = model.getKocka();
+
+            String s = String.valueOf(dobas);
+            System.out.println(s);
+            switch(dobas){
+                case 1:
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png")));
+                    break;
+                case 2:
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ketto.png")));
+                    break;
+                case 3:
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/harom.png")));
+                    break;
+                case 4:
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/negy.png")));
+                    break;    
+                case 5:
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ot.png")));
+                    break;
+                case 6:
+                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/hat.png")));
+                    break;
+            }
+
+            model.move();
+            refresh(model.pos());
+
+            click = 0;
+        }
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        Neptunuzenetjelzes t = new Neptunuzenetjelzes();
+        t.setVisible(true);
+        t.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void kilepesGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kilepesGombActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_kilepesGombActionPerformed
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
+    }//GEN-LAST:event_formMouseDragged
+
+    private void refresh(int[] pos) {
+            ArrayList <javax.swing.JLabel> sargaAL = new ArrayList <javax.swing.JLabel> (sargaCollection);
+            ArrayList <javax.swing.JLabel> pirosAL = new ArrayList <javax.swing.JLabel> (pirosCollection);		
+            ArrayList <javax.swing.JLabel> kekAL = new ArrayList <javax.swing.JLabel> (kekCollection);
+            ArrayList <javax.swing.JLabel> zoldAL = new ArrayList <javax.swing.JLabel> (zoldCollection);
+
+            for (int i = 0; i <= 31; i++) {
+                    sargaAL.get(i).setVisible(false);
+                    pirosAL.get(i).setVisible(false);
+                    kekAL.get(i).setVisible(false);
+                    zoldAL.get(i).setVisible(false);
+            }
+
+            /* pos[] = {sárga játékos poziciója, piros, kek, zold} */
+            sargaAL.get(pos[0]).setVisible(true);
+            pirosAL.get(pos[1]).setVisible(true);
+            kekAL.get(pos[2]).setVisible(true);
+            zoldAL.get(pos[3]).setVisible(true);
+
+    };
 
     /**
      * @param args the command line arguments
@@ -730,6 +870,12 @@ public class Tabla extends javax.swing.JFrame {
             }
         });
     }
+
+    private Model model = new Model();
+    private Collection sargaCollection = new ArrayList();
+    private Collection pirosCollection = new ArrayList();
+    private Collection kekCollection = new ArrayList();
+    private Collection zoldCollection = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Kek1;
@@ -861,6 +1007,160 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JLabel Zold7;
     private javax.swing.JLabel Zold8;
     private javax.swing.JLabel Zold9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton kilepesGomb;
     // End of variables declaration//GEN-END:variables
+
+    private void println(Random rand) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void buildCollections() {
+        sargaCollection.add(Sarga1);
+        sargaCollection.add(Sarga2);
+        sargaCollection.add(Sarga3);
+        sargaCollection.add(Sarga4);
+        sargaCollection.add(Sarga5);
+        sargaCollection.add(Sarga6);
+        sargaCollection.add(Sarga7);
+        sargaCollection.add(Sarga8);
+        sargaCollection.add(Sarga9);
+        sargaCollection.add(Sarga10);
+        sargaCollection.add(Sarga11);
+        sargaCollection.add(Sarga12);
+        sargaCollection.add(Sarga13);
+        sargaCollection.add(Sarga14);
+        sargaCollection.add(Sarga15);
+        sargaCollection.add(Sarga16);
+        sargaCollection.add(Sarga17);
+        sargaCollection.add(Sarga18);
+        sargaCollection.add(Sarga19);
+        sargaCollection.add(Sarga20);
+        sargaCollection.add(Sarga21);
+        sargaCollection.add(Sarga22);
+        sargaCollection.add(Sarga23);
+        sargaCollection.add(Sarga24);
+        sargaCollection.add(Sarga25);
+        sargaCollection.add(Sarga26);
+        sargaCollection.add(Sarga27);
+        sargaCollection.add(Sarga28);
+        sargaCollection.add(Sarga29);
+        sargaCollection.add(Sarga30);
+        sargaCollection.add(Sarga31);
+        sargaCollection.add(Sarga32);
+        zoldCollection.add(Zold1);
+        zoldCollection.add(Zold2);
+        zoldCollection.add(Zold3);
+        zoldCollection.add(Zold4);
+        zoldCollection.add(Zold5);
+        zoldCollection.add(Zold6);
+        zoldCollection.add(Zold7);
+        zoldCollection.add(Zold8);
+        zoldCollection.add(Zold9);
+        zoldCollection.add(Zold10);
+        zoldCollection.add(Zold11);
+        zoldCollection.add(Zold12);
+        zoldCollection.add(Zold13);
+        zoldCollection.add(Zold14);
+        zoldCollection.add(Zold15);
+        zoldCollection.add(Zold16);
+        zoldCollection.add(Zold17);
+        zoldCollection.add(Zold18);
+        zoldCollection.add(Zold19);
+        zoldCollection.add(Zold20);
+        zoldCollection.add(Zold21);
+        zoldCollection.add(Zold22);
+        zoldCollection.add(Zold23);
+        zoldCollection.add(Zold24);
+        zoldCollection.add(Zold25);
+        zoldCollection.add(Zold26);
+        zoldCollection.add(Zold27);
+        zoldCollection.add(Zold28);
+        zoldCollection.add(Zold29);
+        zoldCollection.add(Zold30);
+        zoldCollection.add(Zold31);
+        zoldCollection.add(Zold32);
+        kekCollection.add(Kek1);
+        kekCollection.add(Kek2);
+        kekCollection.add(Kek3);
+        kekCollection.add(Kek4);
+        kekCollection.add(Kek5);
+        kekCollection.add(Kek6);
+        kekCollection.add(Kek7);
+        kekCollection.add(Kek8);
+        kekCollection.add(Kek9);
+        kekCollection.add(Kek10);
+        kekCollection.add(Kek11);
+        kekCollection.add(Kek12);
+        kekCollection.add(Kek13);
+        kekCollection.add(Kek14);
+        kekCollection.add(Kek15);
+        kekCollection.add(Kek16);
+        kekCollection.add(Kek17);
+        kekCollection.add(Kek18);
+        kekCollection.add(Kek19);
+        kekCollection.add(Kek20);
+        kekCollection.add(Kek21);
+        kekCollection.add(Kek22);
+        kekCollection.add(Kek23);
+        kekCollection.add(Kek24);
+        kekCollection.add(Kek25);
+        kekCollection.add(Kek26);
+        kekCollection.add(Kek27);
+        kekCollection.add(Kek28);
+        kekCollection.add(Kek29);
+        kekCollection.add(Kek30);
+        kekCollection.add(Kek31);
+        kekCollection.add(Kek32);
+        pirosCollection.add(Piros1);
+        pirosCollection.add(Piros2);
+        pirosCollection.add(Piros3);
+        pirosCollection.add(Piros4);
+        pirosCollection.add(Piros5);
+        pirosCollection.add(Piros6);
+        pirosCollection.add(Piros7);
+        pirosCollection.add(Piros8);
+        pirosCollection.add(Piros9);
+        pirosCollection.add(Piros10);
+        pirosCollection.add(Piros11);
+        pirosCollection.add(Piros12);
+        pirosCollection.add(Piros13);
+        pirosCollection.add(Piros14);
+        pirosCollection.add(Piros15);
+        pirosCollection.add(Piros16);
+        pirosCollection.add(Piros17);
+        pirosCollection.add(Piros18);
+        pirosCollection.add(Piros19);
+        pirosCollection.add(Piros20);
+        pirosCollection.add(Piros21);
+        pirosCollection.add(Piros22);
+        pirosCollection.add(Piros23);
+        pirosCollection.add(Piros24);
+        pirosCollection.add(Piros25);
+        pirosCollection.add(Piros26);
+        pirosCollection.add(Piros27);
+        pirosCollection.add(Piros28);
+        pirosCollection.add(Piros29);
+        pirosCollection.add(Piros30);
+        pirosCollection.add(Piros31);
+        pirosCollection.add(Piros32);
+    };
+
+    private void initTokens() {
+        ArrayList <javax.swing.JLabel> sargaAL = new ArrayList <javax.swing.JLabel> (sargaCollection);
+        ArrayList <javax.swing.JLabel> pirosAL = new ArrayList <javax.swing.JLabel> (pirosCollection);		
+        ArrayList <javax.swing.JLabel> kekAL = new ArrayList <javax.swing.JLabel> (kekCollection);
+        ArrayList <javax.swing.JLabel> zoldAL = new ArrayList <javax.swing.JLabel> (zoldCollection);
+
+        for (int i = 1; i <= 31; i++) {
+            sargaAL.get(i).setVisible(false);
+            pirosAL.get(i).setVisible(false);
+            kekAL.get(i).setVisible(false);
+            zoldAL.get(i).setVisible(false);
+        }
+
+    }
+
 }

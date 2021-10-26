@@ -11,6 +11,9 @@ package mono;
  */
 public class Start extends javax.swing.JFrame {
 
+    private int mouseX;
+    private int mouseY;
+    
     /**
      * Creates new form Start
      */
@@ -27,41 +30,273 @@ public class Start extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        startGomb = new javax.swing.JButton();
+        kilepesGomb = new javax.swing.JButton();
+        logo = new javax.swing.JLabel();
+        jatekosokSzamaLabel = new javax.swing.JLabel();
+        jatekosokSzama = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        elsoJatekos = new javax.swing.JTextField();
+        masodikJatekos = new javax.swing.JTextField();
+        harmadikJatekos = new javax.swing.JTextField();
+        negyedikJatekos = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ELTE Monopoly - Savaria Edition");
+        setLocation(new java.awt.Point(0, 0));
+        setLocationByPlatform(true);
+        setUndecorated(true);
 
-        jButton1.setText("Start");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
             }
         });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
+        jPanel1.setLayout(null);
+
+        startGomb.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        startGomb.setText("Start");
+        startGomb.setEnabled(false);
+        startGomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startGombActionPerformed(evt);
+            }
+        });
+        jPanel1.add(startGomb);
+        startGomb.setBounds(600, 420, 110, 37);
+
+        kilepesGomb.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        kilepesGomb.setText("Kilépés");
+        kilepesGomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kilepesGombActionPerformed(evt);
+            }
+        });
+        jPanel1.add(kilepesGomb);
+        kilepesGomb.setBounds(30, 420, 113, 37);
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/logo2.png"))); // NOI18N
+        jPanel1.add(logo);
+        logo.setBounds(190, 10, 330, 150);
+
+        jatekosokSzamaLabel.setFont(new java.awt.Font("Trebuchet MS", 1, 20)); // NOI18N
+        jatekosokSzamaLabel.setText("Játékosok száma:");
+        jPanel1.add(jatekosokSzamaLabel);
+        jatekosokSzamaLabel.setBounds(240, 190, 170, 24);
+
+        jatekosokSzama.setFont(new java.awt.Font("Trebuchet MS", 1, 20)); // NOI18N
+        jatekosokSzama.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "2", "3", "4" }));
+        jatekosokSzama.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jatekosokSzamaItemStateChanged(evt);
+            }
+        });
+        jatekosokSzama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jatekosokSzamaFocusLost(evt);
+            }
+        });
+        jatekosokSzama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jatekosokSzamaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jatekosokSzama);
+        jatekosokSzama.setBounds(420, 190, 50, 30);
+
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel2.setText("1. játékos:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(70, 320, 100, 21);
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel3.setText("2. játékos:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(230, 320, 100, 21);
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel4.setText("3. játékos:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(400, 320, 100, 21);
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel5.setText("4. játékos:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(570, 320, 100, 21);
+
+        elsoJatekos.setEditable(false);
+        elsoJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        elsoJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(elsoJatekos);
+        elsoJatekos.setBounds(50, 360, 140, 30);
+
+        masodikJatekos.setEditable(false);
+        masodikJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        masodikJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(masodikJatekos);
+        masodikJatekos.setBounds(210, 360, 140, 30);
+
+        harmadikJatekos.setEditable(false);
+        harmadikJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        harmadikJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        harmadikJatekos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                harmadikJatekosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(harmadikJatekos);
+        harmadikJatekos.setBounds(370, 360, 150, 30);
+
+        negyedikJatekos.setEditable(false);
+        negyedikJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        negyedikJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(negyedikJatekos);
+        negyedikJatekos.setBounds(540, 360, 150, 30);
+        jPanel1.add(jSeparator1);
+        jSeparator1.setBounds(361, 240, 0, 187);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\piros.png")); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(100, 250, 30, 50);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\kek.png")); // NOI18N
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(260, 250, 30, 50);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\zold.png")); // NOI18N
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(430, 250, 30, 50);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\sarga.png")); // NOI18N
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(600, 240, 30, 60);
+
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator2);
+        jSeparator2.setBounds(40, 240, 10, 160);
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator3);
+        jSeparator3.setBounds(200, 240, 10, 160);
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator4);
+        jSeparator4.setBounds(360, 240, 10, 160);
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator5);
+        jSeparator5.setBounds(530, 240, 10, 160);
+
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator6);
+        jSeparator6.setBounds(700, 240, 10, 160);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(615, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(64, 64, 64))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(418, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(35, 35, 35))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void startGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGombActionPerformed
         Tabla t = new Tabla();
         t.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        t.setLocationRelativeTo(null);
+        setVisible(false);
+    }//GEN-LAST:event_startGombActionPerformed
+
+    private void kilepesGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kilepesGombActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_kilepesGombActionPerformed
+
+    private void jatekosokSzamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jatekosokSzamaActionPerformed
+        String valasztas = jatekosokSzama.getSelectedItem().toString();
+        if (valasztas.equals("")) 
+        {
+            elsoJatekos.setEditable(false);
+            masodikJatekos.setEditable(false);
+            harmadikJatekos.setEditable(false);
+            negyedikJatekos.setEditable(false);
+            startGomb.setEnabled(false);
+        }
+        else if (valasztas.equals("2"))
+        {
+            elsoJatekos.setEditable(true);
+            masodikJatekos.setEditable(true);
+            harmadikJatekos.setEditable(false);
+            negyedikJatekos.setEditable(false);
+            startGomb.setEnabled(true);
+        }
+        else if (valasztas.equals("3"))
+        {
+            elsoJatekos.setEditable(true);
+            masodikJatekos.setEditable(true);
+            harmadikJatekos.setEditable(true);
+            negyedikJatekos.setEditable(false);
+            startGomb.setEnabled(true);
+        }
+        else if (valasztas.equals("4"))
+        {
+            elsoJatekos.setEditable(true);
+            masodikJatekos.setEditable(true);
+            harmadikJatekos.setEditable(true);
+            negyedikJatekos.setEditable(true);
+            startGomb.setEnabled(true);
+        }
+    }//GEN-LAST:event_jatekosokSzamaActionPerformed
+
+    private void harmadikJatekosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_harmadikJatekosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_harmadikJatekosActionPerformed
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
+    }//GEN-LAST:event_jPanel1MouseDragged
+
+    private void jatekosokSzamaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jatekosokSzamaItemStateChanged
+        
+    }//GEN-LAST:event_jatekosokSzamaItemStateChanged
+
+    private void jatekosokSzamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jatekosokSzamaFocusLost
+        
+    }//GEN-LAST:event_jatekosokSzamaFocusLost
 
     /**
      * @param args the command line arguments
@@ -99,6 +334,29 @@ public class Start extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField elsoJatekos;
+    private javax.swing.JTextField harmadikJatekos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JComboBox<String> jatekosokSzama;
+    private javax.swing.JLabel jatekosokSzamaLabel;
+    private javax.swing.JButton kilepesGomb;
+    private javax.swing.JLabel logo;
+    private javax.swing.JTextField masodikJatekos;
+    private javax.swing.JTextField negyedikJatekos;
+    private javax.swing.JButton startGomb;
     // End of variables declaration//GEN-END:variables
 }
