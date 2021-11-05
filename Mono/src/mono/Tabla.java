@@ -28,6 +28,8 @@ public class Tabla extends javax.swing.JFrame {
         buildCollections();
         Start.model.kezdoPoziciok();
         rajzolBabuk(Start.model.pos());
+        jatekos.setText((String) Start.model.getName() );
+        kredit.setText(String.valueOf( Start.model.getKredit() ));
     }
 
     /**
@@ -908,6 +910,8 @@ public class Tabla extends javax.swing.JFrame {
         click++;
         if(click == 1){
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
+            jatekos.setText((String) Start.model.getName() );
+            kredit.setText(String.valueOf( Start.model.getKredit() ));
         } else if(click == 2){
             Start.model.dobas();
             rajzolKocka();
@@ -915,9 +919,10 @@ public class Tabla extends javax.swing.JFrame {
             mezonev.setText( Start.model.getMezo() );
             rajzolBabuk(Start.model.pos());
             Start.model.mezoHatasa();
+            jatekos.setText((String) Start.model.getName() );
             kredit.setText(String.valueOf( Start.model.getKredit() ));
             Start.model.kovJatekos();
-            jatekos.setText((String) Start.model.getName() );
+
 
             click = 0;
         }
