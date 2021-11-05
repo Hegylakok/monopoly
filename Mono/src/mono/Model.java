@@ -10,16 +10,6 @@ public class Model {
 	private static String[] mezok = {"Ösztöndíj", "Ping-Pong asztal", "<html><body>Menza<br>-5 kredit</body></html>", "Porta", "Neptun üzenet", "Lift", "<html><body>Tárgy elfogadtatása<br>+8 kredit</body></html>" ,"HÖK iroda", "<html><body>Italautomata<br>-4 kredit</body></html>", "Sportpálya", "<html><body>Elégtelen ZH<br>-8 kredit</body></html>", "Konditerem","Neptun üzenet", "Robotikai labor" , "<html><body>Online ZH<br>+5 kredit</body></html>", "Könyvtár", "Neptun üzenet", "Tanulmányi osztály", "<html><body>Rendkívüli ösztöndíj<br>+10 kredit</body></html>", "Informatikai labor", "Neptun üzenet", "Előadó", "Zárthelyi dolgozat", "Díszterem", "<html><body>Kávéautomata<br>-3 kredit</body></html>", "Sportcsarnok", "<html><body>Beadandó<br>+4 kredit</body></html>", "B-Club", "Neptun üzenet", "Gépész labor", "<html><body>Jegyzet<br>+3 kredit</body></html>", "ELTE Shop","<html><body>Ösztöndíj<br>+30 kredit</body></html>"};
 	private static String[] buntetesek = {"0", "0","-5","0","0","0","8","0","-4","0","-8","0","0","0","5","0","0","0","10","0","0","0","random","0","-3","0","4","0","0","0","3","0"};
 
-/*
-	private static String[] neptunTargy = {"1. placeholder tárgy", "2. placeholder tárgy"};
-	private static String[] neptunKuldo = {"1. placeholder kuldo", "2. placehodler kuldo"};
-	private static String[] neptunKuldesIdeje = {"1. placeholder ideje", "2. placehodler ideje"}; 
-	private static String[] neptunErvenyesseg = {"1. placeholder ervenyesseg", "2. placehodler ervenyesseg"};
-	private static String[] neptunCimzett = {"1. placeholder cimzett", "2. placehodler cimzett"};
-	private static String[] neptunMsg = {"1. neptun üzenet", "2. neptun üzenet"};
-	private static String[] neptunBuntetes = {"-1", "1"};
-*/
-
 	private static String[][] neptunok = {
 		{"1targy", "1kuldo", "1ido", "1erveny", "1cimzett", "1msg", "0"},
 		{"2targy", "2kuldo", "2ido", "2erveny", "2cimzett", "1msg", "0"}
@@ -63,16 +53,6 @@ public class Model {
 	public String getNeptunCimzett() {return neptunok[randNeptun][4];}
 	public String getNeptunMsg() {return neptunok[randNeptun][5];}
 	public String getNeptunBuntetes() {return neptunok[randNeptun][6];}
-
-/*
-	public String getNeptunTargy() { return neptunTargy[randNeptun]; }
-	public String getNeptunKuldo() { return neptunKuldo[randNeptun]; }
-	public String getNeptunKuldesIdeje() {return neptunKuldesIdeje[randNeptun];}
-	public String getNeptunErvenyesseg() {return neptunErvenyesseg[randNeptun];}
-	public String getNeptunCimzett() {return neptunCimzett[randNeptun];}
-	public String getNeptunMsg() { return neptunMsg[randNeptun]; }
-	public String getNeptunBuntetes() {return neptunBuntetes[randNeptun];}
-*/
 
 	public void dobas() {
 		Random rand = new Random();
