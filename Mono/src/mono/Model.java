@@ -12,7 +12,7 @@ public class Model {
 
 	private static String[][] neptunok = {
 		{"1targy", "1kuldo", "1ido", "1erveny", "1cimzett", "1msg", "0"},
-		{"2targy", "2kuldo", "2ido", "2erveny", "2cimzett", "1msg", "0"}
+		{"2targy", "2kuldo", "2ido", "2erveny", "2cimzett", "2msg", "0"}
 	};
 
 	private static int aktivJatekos = 0;
@@ -74,8 +74,9 @@ public class Model {
 	public void neptunMezo() {
 		Random rand = new Random();
 		int min = 0;
-		int max = 1;
-		randNeptun = rand.nextInt(max-min) + 1;
+		int max = 2;
+		randNeptun = rand.nextInt(max-min);
+		System.out.println("randNeptun " + String.valueOf(randNeptun));
 		int kredit = jatekosok.get(aktivJatekos).getKredit();
 
 		jatekosok.get(aktivJatekos).setKredit(kredit+Integer.parseInt(getNeptunBuntetes()));
