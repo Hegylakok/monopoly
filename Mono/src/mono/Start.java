@@ -237,39 +237,20 @@ public class Start extends javax.swing.JFrame {
     
     
     private void startGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGombActionPerformed
-
-
         int jatekosszam = Integer.parseInt(jatekosokSzama.getSelectedItem().toString());
         System.out.println("jatekosszam@startGomb " + jatekosszam);
 
         model.setPlayerCount(jatekosszam);
-
-        /* don't construct Tabla until playerCount is set */
         Tabla t = new Tabla();
 
-        int temp = 0;
-        if(elsoJatekos.getText().isEmpty() == false){
-           model.setName(0, elsoJatekos.getText());
-           temp++;
-        }
-        if(masodikJatekos.getText().isEmpty() == false){
-           model.setName(1, masodikJatekos.getText());
-           temp++;
-        }
-        if(harmadikJatekos.getText().isEmpty() == false){
-           model.setName(2, harmadikJatekos.getText());
-           temp++;
-        }
-        if(negyedikJatekos.getText().isEmpty() == false){
-           model.setName(3, negyedikJatekos.getText());
-           temp++;
-        }
-        System.out.println("temp@startGomb " + temp);
-        if(temp == jatekosszam){
-            t.setVisible(true);
-            t.setLocationRelativeTo(null);
-            setVisible(false);
-        }
+        model.setName(0, elsoJatekos.getText());
+        model.setName(1, masodikJatekos.getText());
+        model.setName(2, harmadikJatekos.getText());
+        model.setName(3, negyedikJatekos.getText());
+
+        t.setVisible(true);
+        t.setLocationRelativeTo(null);
+        setVisible(false);
     }//GEN-LAST:event_startGombActionPerformed
 
     private void kilepesGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kilepesGombActionPerformed
