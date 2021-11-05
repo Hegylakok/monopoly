@@ -13,9 +13,6 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ArrayList használata a 128 bábuk indexelésére, hogy müködjön a netbeans formos rendszerével.
- * Optimalizálható, hogy majd ne építse fel az ArrayList-eket minden frissítésnél.
- * Lehet érdemes lenni szétbontani másik fájlba átláthatóság szempontjából.
  * @author dalos
  */
 public class Tabla extends javax.swing.JFrame {
@@ -29,7 +26,8 @@ public class Tabla extends javax.swing.JFrame {
     public Tabla() {
         initComponents();
         buildCollections();
-        initTokens(); /* bábuk */
+        Start.model.kezdoPoziciok();
+        rajzolBabuk(Start.model.pos());
     }
 
     /**
@@ -41,6 +39,7 @@ public class Tabla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        hatter = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         Sarga1 = new javax.swing.JLabel();
         Piros1 = new javax.swing.JLabel();
@@ -171,9 +170,18 @@ public class Tabla extends javax.swing.JFrame {
         Kek32 = new javax.swing.JLabel();
         Zold32 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        neptunUzenet = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         Tabla = new javax.swing.JLabel();
-        kilepesGomb = new javax.swing.JButton();
+        jatekosnev = new javax.swing.JPanel();
+        mezonev = new javax.swing.JLabel();
+        kezdokerdit = new javax.swing.JLabel();
+        kredit = new javax.swing.JLabel();
+        jatekos = new javax.swing.JLabel();
+        nevkiir = new javax.swing.JLabel();
+        kezdokerdit1 = new javax.swing.JLabel();
+        kilepesPanel = new javax.swing.JPanel();
+        kilepesGomb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
@@ -188,520 +196,524 @@ public class Tabla extends javax.swing.JFrame {
             }
         });
 
+        hatter.setBackground(new java.awt.Color(255, 255, 255));
+        hatter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         Sarga1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga1);
-        Sarga1.setBounds(650, 40, 28, 45);
+        Sarga1.setBounds(650, 40, 24, 40);
         Sarga1.getAccessibleContext().setAccessibleName("Sarga");
 
         Piros1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros1);
-        Piros1.setBounds(680, 40, 28, 45);
+        Piros1.setBounds(680, 40, 24, 40);
 
         Kek1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek1);
-        Kek1.setBounds(680, 10, 28, 45);
+        Kek1.setBounds(680, 10, 24, 40);
 
         Zold1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold1);
-        Zold1.setBounds(650, 10, 28, 45);
+        Zold1.setBounds(650, 10, 24, 40);
 
         Sarga2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga2);
-        Sarga2.setBounds(660, 140, 28, 45);
+        Sarga2.setBounds(660, 140, 24, 40);
 
         Piros2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros2);
-        Piros2.setBounds(690, 140, 28, 45);
+        Piros2.setBounds(690, 140, 24, 40);
 
         Kek2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek2);
-        Kek2.setBounds(690, 110, 28, 45);
+        Kek2.setBounds(690, 110, 24, 40);
 
         Zold2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold2);
-        Zold2.setBounds(660, 110, 28, 45);
+        Zold2.setBounds(660, 110, 24, 40);
 
         Sarga3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga3);
-        Sarga3.setBounds(660, 210, 28, 45);
+        Sarga3.setBounds(660, 210, 24, 40);
 
         Piros3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros3);
-        Piros3.setBounds(690, 210, 28, 45);
+        Piros3.setBounds(690, 210, 24, 40);
 
         Kek3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek3);
-        Kek3.setBounds(690, 180, 28, 45);
+        Kek3.setBounds(690, 180, 24, 40);
 
         Zold3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold3);
-        Zold3.setBounds(660, 180, 28, 45);
+        Zold3.setBounds(660, 180, 24, 40);
 
         Sarga4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga4);
-        Sarga4.setBounds(660, 280, 28, 45);
+        Sarga4.setBounds(660, 280, 24, 40);
 
         Piros4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros4);
-        Piros4.setBounds(690, 280, 28, 45);
+        Piros4.setBounds(690, 280, 24, 40);
 
         Kek4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek4);
-        Kek4.setBounds(690, 250, 28, 45);
+        Kek4.setBounds(690, 250, 24, 40);
 
         Zold4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold4);
-        Zold4.setBounds(660, 250, 28, 45);
+        Zold4.setBounds(660, 250, 24, 40);
 
         Sarga5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga5);
-        Sarga5.setBounds(660, 350, 28, 45);
+        Sarga5.setBounds(660, 350, 24, 40);
 
         Piros5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros5);
-        Piros5.setBounds(690, 350, 28, 45);
+        Piros5.setBounds(690, 350, 24, 40);
 
         Kek5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek5);
-        Kek5.setBounds(690, 320, 28, 45);
+        Kek5.setBounds(690, 320, 24, 40);
 
         Zold5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold5);
-        Zold5.setBounds(660, 320, 28, 45);
+        Zold5.setBounds(660, 320, 24, 40);
 
         Sarga6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga6);
-        Sarga6.setBounds(660, 420, 28, 45);
+        Sarga6.setBounds(660, 420, 24, 40);
 
         Piros6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros6);
-        Piros6.setBounds(690, 420, 28, 45);
+        Piros6.setBounds(690, 420, 24, 40);
 
         Kek6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek6);
-        Kek6.setBounds(690, 390, 28, 45);
+        Kek6.setBounds(690, 390, 24, 40);
 
         Zold6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold6);
-        Zold6.setBounds(660, 390, 28, 45);
+        Zold6.setBounds(660, 390, 24, 40);
 
         Sarga7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga7);
-        Sarga7.setBounds(660, 490, 28, 45);
+        Sarga7.setBounds(660, 490, 24, 40);
 
         Piros7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros7);
-        Piros7.setBounds(690, 490, 28, 45);
+        Piros7.setBounds(690, 490, 24, 40);
 
         Kek7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek7);
-        Kek7.setBounds(690, 460, 28, 45);
+        Kek7.setBounds(690, 460, 24, 40);
 
         Zold7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold7);
-        Zold7.setBounds(660, 460, 28, 45);
+        Zold7.setBounds(660, 460, 24, 40);
 
         Sarga8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga8);
-        Sarga8.setBounds(660, 560, 28, 45);
+        Sarga8.setBounds(660, 560, 24, 40);
 
         Piros8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros8);
-        Piros8.setBounds(690, 560, 28, 45);
+        Piros8.setBounds(690, 560, 24, 40);
 
         Kek8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek8);
-        Kek8.setBounds(690, 530, 28, 45);
+        Kek8.setBounds(690, 530, 24, 40);
 
         Zold8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold8);
-        Zold8.setBounds(660, 530, 28, 45);
+        Zold8.setBounds(660, 530, 24, 40);
 
         Sarga9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga9);
-        Sarga9.setBounds(650, 670, 28, 45);
+        Sarga9.setBounds(650, 670, 24, 40);
 
         Piros9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros9);
-        Piros9.setBounds(680, 670, 28, 45);
+        Piros9.setBounds(680, 670, 24, 40);
 
         Kek9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek9);
-        Kek9.setBounds(680, 640, 28, 45);
+        Kek9.setBounds(680, 640, 24, 40);
 
         Zold9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold9);
-        Zold9.setBounds(650, 640, 28, 45);
+        Zold9.setBounds(650, 640, 24, 40);
 
         Sarga10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga10);
-        Sarga10.setBounds(540, 670, 28, 45);
+        Sarga10.setBounds(540, 670, 24, 40);
 
         Piros10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros10);
-        Piros10.setBounds(570, 670, 28, 45);
+        Piros10.setBounds(570, 670, 24, 40);
 
         Kek10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek10);
-        Kek10.setBounds(570, 640, 28, 45);
+        Kek10.setBounds(570, 640, 24, 40);
 
         Zold10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold10);
-        Zold10.setBounds(540, 640, 28, 45);
+        Zold10.setBounds(540, 640, 24, 40);
 
         Sarga11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga11);
-        Sarga11.setBounds(470, 670, 28, 45);
+        Sarga11.setBounds(470, 670, 24, 40);
 
         Piros11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros11);
-        Piros11.setBounds(500, 670, 28, 45);
+        Piros11.setBounds(500, 670, 24, 40);
 
         Kek11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek11);
-        Kek11.setBounds(500, 640, 28, 45);
+        Kek11.setBounds(500, 640, 24, 40);
 
         Zold11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold11);
-        Zold11.setBounds(470, 640, 28, 45);
+        Zold11.setBounds(470, 640, 24, 40);
 
         Sarga12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga12);
-        Sarga12.setBounds(400, 670, 28, 45);
+        Sarga12.setBounds(400, 670, 24, 40);
 
         Piros12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros12);
-        Piros12.setBounds(430, 670, 28, 45);
+        Piros12.setBounds(430, 670, 24, 40);
 
         Kek12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek12);
-        Kek12.setBounds(430, 640, 28, 45);
+        Kek12.setBounds(430, 640, 24, 40);
 
         Zold12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold12);
-        Zold12.setBounds(400, 640, 28, 45);
+        Zold12.setBounds(400, 640, 24, 40);
 
         Piros13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros13);
-        Piros13.setBounds(360, 670, 28, 45);
+        Piros13.setBounds(360, 670, 24, 40);
 
         Sarga13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga13);
-        Sarga13.setBounds(330, 670, 28, 45);
+        Sarga13.setBounds(330, 670, 24, 40);
 
         Kek13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek13);
-        Kek13.setBounds(360, 640, 28, 45);
+        Kek13.setBounds(360, 640, 24, 40);
 
         Zold13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold13);
-        Zold13.setBounds(330, 640, 28, 45);
+        Zold13.setBounds(330, 640, 24, 40);
 
         Piros14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros14);
-        Piros14.setBounds(290, 670, 28, 45);
+        Piros14.setBounds(290, 670, 24, 40);
 
         Sarga14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga14);
-        Sarga14.setBounds(260, 670, 28, 45);
+        Sarga14.setBounds(260, 670, 24, 40);
 
         Kek14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek14);
-        Kek14.setBounds(290, 640, 28, 45);
+        Kek14.setBounds(290, 640, 24, 40);
 
         Zold14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold14);
-        Zold14.setBounds(260, 640, 28, 45);
+        Zold14.setBounds(260, 640, 24, 40);
 
         Piros15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros15);
-        Piros15.setBounds(220, 670, 28, 45);
+        Piros15.setBounds(220, 670, 24, 40);
 
         Sarga15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga15);
-        Sarga15.setBounds(190, 670, 28, 45);
+        Sarga15.setBounds(190, 670, 24, 40);
 
         Kek15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek15);
-        Kek15.setBounds(220, 640, 28, 45);
+        Kek15.setBounds(220, 640, 24, 40);
 
         Zold15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold15);
-        Zold15.setBounds(190, 640, 28, 45);
+        Zold15.setBounds(190, 640, 24, 40);
 
         Piros16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros16);
-        Piros16.setBounds(150, 670, 28, 45);
+        Piros16.setBounds(150, 670, 24, 40);
 
         Sarga16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga16);
-        Sarga16.setBounds(120, 670, 28, 45);
+        Sarga16.setBounds(120, 670, 24, 40);
 
         Kek16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek16);
-        Kek16.setBounds(150, 640, 28, 45);
+        Kek16.setBounds(150, 640, 24, 40);
 
         Zold16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold16);
-        Zold16.setBounds(120, 640, 28, 45);
+        Zold16.setBounds(120, 640, 24, 40);
 
         Piros17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros17);
-        Piros17.setBounds(40, 670, 28, 45);
+        Piros17.setBounds(40, 670, 24, 40);
 
         Sarga17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga17);
-        Sarga17.setBounds(10, 670, 28, 45);
+        Sarga17.setBounds(10, 670, 24, 40);
 
         Kek17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek17);
-        Kek17.setBounds(40, 640, 28, 45);
+        Kek17.setBounds(40, 640, 24, 40);
 
         Zold17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold17);
-        Zold17.setBounds(10, 640, 28, 45);
+        Zold17.setBounds(10, 640, 24, 40);
 
         Piros18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros18);
-        Piros18.setBounds(40, 560, 28, 45);
+        Piros18.setBounds(40, 560, 24, 40);
 
         Sarga18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga18);
-        Sarga18.setBounds(10, 560, 28, 45);
+        Sarga18.setBounds(10, 560, 24, 40);
 
         Kek18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek18);
-        Kek18.setBounds(40, 530, 28, 45);
+        Kek18.setBounds(40, 530, 24, 40);
 
         Zold18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold18);
-        Zold18.setBounds(10, 530, 28, 45);
+        Zold18.setBounds(10, 530, 24, 40);
 
         Piros19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros19);
-        Piros19.setBounds(40, 490, 28, 45);
+        Piros19.setBounds(40, 490, 24, 40);
 
         Sarga19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga19);
-        Sarga19.setBounds(10, 490, 28, 45);
+        Sarga19.setBounds(10, 490, 24, 40);
 
         Kek19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek19);
-        Kek19.setBounds(40, 460, 28, 45);
+        Kek19.setBounds(40, 460, 24, 40);
 
         Zold19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold19);
-        Zold19.setBounds(10, 460, 28, 45);
+        Zold19.setBounds(10, 460, 24, 40);
 
         Piros20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros20);
-        Piros20.setBounds(40, 420, 28, 45);
+        Piros20.setBounds(40, 420, 24, 40);
 
         Sarga20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga20);
-        Sarga20.setBounds(10, 420, 28, 45);
+        Sarga20.setBounds(10, 420, 24, 40);
 
         Kek20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek20);
-        Kek20.setBounds(40, 390, 28, 45);
+        Kek20.setBounds(40, 390, 24, 40);
 
         Zold20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold20);
-        Zold20.setBounds(10, 390, 28, 45);
+        Zold20.setBounds(10, 390, 24, 40);
 
         Piros21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros21);
-        Piros21.setBounds(40, 350, 28, 45);
+        Piros21.setBounds(40, 350, 24, 40);
 
         Sarga21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga21);
-        Sarga21.setBounds(10, 350, 28, 45);
+        Sarga21.setBounds(10, 350, 24, 40);
 
         Kek21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek21);
-        Kek21.setBounds(40, 320, 28, 45);
+        Kek21.setBounds(40, 320, 24, 40);
 
         Zold21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold21);
-        Zold21.setBounds(10, 320, 28, 45);
+        Zold21.setBounds(10, 320, 24, 40);
 
         Piros22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros22);
-        Piros22.setBounds(40, 280, 28, 45);
+        Piros22.setBounds(40, 280, 24, 40);
 
         Sarga22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga22);
-        Sarga22.setBounds(10, 280, 28, 45);
+        Sarga22.setBounds(10, 280, 24, 40);
 
         Kek22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek22);
-        Kek22.setBounds(40, 250, 28, 45);
+        Kek22.setBounds(40, 250, 24, 40);
 
         Zold22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold22);
-        Zold22.setBounds(10, 250, 28, 45);
+        Zold22.setBounds(10, 250, 24, 40);
 
         Piros23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros23);
-        Piros23.setBounds(40, 210, 28, 45);
+        Piros23.setBounds(40, 210, 24, 40);
 
         Sarga23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga23);
-        Sarga23.setBounds(10, 210, 28, 45);
+        Sarga23.setBounds(10, 210, 24, 40);
 
         Kek23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek23);
-        Kek23.setBounds(40, 180, 28, 45);
+        Kek23.setBounds(40, 180, 24, 40);
 
         Zold23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold23);
-        Zold23.setBounds(10, 180, 28, 45);
+        Zold23.setBounds(10, 180, 24, 40);
 
         Piros24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros24);
-        Piros24.setBounds(40, 140, 28, 45);
+        Piros24.setBounds(40, 140, 24, 40);
 
         Sarga24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga24);
-        Sarga24.setBounds(10, 140, 28, 45);
+        Sarga24.setBounds(10, 140, 24, 40);
 
         Kek24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek24);
-        Kek24.setBounds(40, 110, 28, 45);
+        Kek24.setBounds(40, 110, 24, 40);
 
         Zold24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold24);
-        Zold24.setBounds(10, 110, 28, 45);
+        Zold24.setBounds(10, 110, 24, 40);
 
         Piros25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros25);
-        Piros25.setBounds(40, 40, 28, 45);
+        Piros25.setBounds(40, 40, 24, 40);
 
         Sarga25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga25);
-        Sarga25.setBounds(10, 40, 28, 45);
+        Sarga25.setBounds(10, 40, 24, 40);
 
         Kek25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek25);
-        Kek25.setBounds(40, 10, 28, 45);
+        Kek25.setBounds(40, 10, 24, 40);
 
         Zold25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold25);
-        Zold25.setBounds(10, 10, 28, 45);
+        Zold25.setBounds(10, 10, 24, 40);
 
         Piros26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros26);
-        Piros26.setBounds(150, 40, 28, 45);
+        Piros26.setBounds(150, 40, 24, 40);
 
         Sarga26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga26);
-        Sarga26.setBounds(120, 40, 28, 45);
+        Sarga26.setBounds(120, 40, 24, 40);
 
         Kek26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek26);
-        Kek26.setBounds(150, 10, 28, 45);
+        Kek26.setBounds(150, 10, 24, 40);
 
         Zold26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold26);
-        Zold26.setBounds(120, 10, 28, 45);
+        Zold26.setBounds(120, 10, 24, 40);
 
         Piros27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros27);
-        Piros27.setBounds(220, 40, 28, 45);
+        Piros27.setBounds(220, 40, 24, 40);
 
         Sarga27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga27);
-        Sarga27.setBounds(190, 40, 28, 45);
+        Sarga27.setBounds(190, 40, 24, 40);
 
         Kek27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek27);
-        Kek27.setBounds(220, 10, 28, 45);
+        Kek27.setBounds(220, 10, 24, 40);
 
         Zold27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold27);
-        Zold27.setBounds(190, 10, 28, 45);
+        Zold27.setBounds(190, 10, 24, 40);
 
         Piros28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros28);
-        Piros28.setBounds(290, 40, 28, 45);
+        Piros28.setBounds(290, 40, 24, 40);
 
         Sarga28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga28);
-        Sarga28.setBounds(260, 40, 28, 45);
+        Sarga28.setBounds(260, 40, 24, 40);
 
         Kek28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek28);
-        Kek28.setBounds(290, 10, 28, 45);
+        Kek28.setBounds(290, 10, 24, 40);
 
         Zold28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold28);
-        Zold28.setBounds(260, 10, 28, 45);
+        Zold28.setBounds(260, 10, 24, 40);
 
         Piros29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros29);
-        Piros29.setBounds(360, 40, 28, 45);
+        Piros29.setBounds(360, 40, 24, 40);
 
         Sarga29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga29);
-        Sarga29.setBounds(330, 40, 28, 45);
+        Sarga29.setBounds(330, 40, 24, 40);
 
         Kek29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek29);
-        Kek29.setBounds(360, 10, 28, 45);
+        Kek29.setBounds(360, 10, 24, 40);
 
         Zold29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold29);
-        Zold29.setBounds(330, 10, 28, 45);
+        Zold29.setBounds(330, 10, 24, 40);
 
         Piros30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros30);
-        Piros30.setBounds(430, 40, 28, 45);
+        Piros30.setBounds(430, 40, 24, 40);
 
         Sarga30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga30);
-        Sarga30.setBounds(400, 40, 28, 45);
+        Sarga30.setBounds(400, 40, 24, 40);
 
         Kek30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek30);
-        Kek30.setBounds(430, 10, 28, 45);
+        Kek30.setBounds(430, 10, 24, 40);
 
         Zold30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold30);
-        Zold30.setBounds(400, 10, 28, 45);
+        Zold30.setBounds(400, 10, 24, 40);
 
         Piros31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros31);
-        Piros31.setBounds(500, 40, 28, 45);
+        Piros31.setBounds(500, 40, 24, 40);
 
         Sarga31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga31);
-        Sarga31.setBounds(470, 40, 28, 45);
+        Sarga31.setBounds(470, 40, 24, 40);
 
         Kek31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek31);
-        Kek31.setBounds(500, 10, 28, 45);
+        Kek31.setBounds(500, 10, 24, 40);
 
         Zold31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold31);
-        Zold31.setBounds(470, 10, 28, 45);
+        Zold31.setBounds(470, 10, 24, 40);
 
         Piros32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(Piros32);
-        Piros32.setBounds(570, 40, 28, 45);
+        Piros32.setBounds(570, 40, 24, 40);
 
         Sarga32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(Sarga32);
-        Sarga32.setBounds(540, 40, 28, 45);
+        Sarga32.setBounds(540, 40, 24, 40);
 
         Kek32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(Kek32);
-        Kek32.setBounds(570, 10, 28, 45);
+        Kek32.setBounds(570, 10, 24, 40);
 
         Zold32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(Zold32);
-        Zold32.setBounds(540, 10, 28, 45);
+        Zold32.setBounds(540, 10, 24, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -712,63 +724,141 @@ public class Tabla extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(450, 480, 73, 70);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/neptunkartya.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        neptunUzenet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/neptunkartya.png"))); // NOI18N
+        neptunUzenet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                neptunUzenetMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(170, 160, 170, 100);
+        jPanel1.add(neptunUzenet);
+        neptunUzenet.setBounds(170, 160, 170, 93);
 
-        Tabla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/tabla.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/dobokovkafelirat.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(320, 420, 200, 110);
+
+        Tabla.setBackground(new java.awt.Color(255, 255, 255));
+        Tabla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/tablalogok.png"))); // NOI18N
         Tabla.setText("jLabel1");
         jPanel1.add(Tabla);
         Tabla.setBounds(0, 0, 730, 723);
 
-        kilepesGomb.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        kilepesGomb.setText("Kilépés");
-        kilepesGomb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kilepesGombActionPerformed(evt);
+        jatekosnev.setBackground(new java.awt.Color(255, 255, 255));
+        jatekosnev.setLayout(null);
+
+        mezonev.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        mezonev.setForeground(new java.awt.Color(204, 0, 51));
+        mezonev.setText("Start!");
+        mezonev.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jatekosnev.add(mezonev);
+        mezonev.setBounds(140, 630, 380, 60);
+
+        kezdokerdit.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        kezdokerdit.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        kezdokerdit.setText("Mező:");
+        jatekosnev.add(kezdokerdit);
+        kezdokerdit.setBounds(20, 630, 110, 30);
+
+        kredit.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        kredit.setForeground(new java.awt.Color(204, 0, 51));
+        jatekosnev.add(kredit);
+        kredit.setBounds(140, 590, 150, 30);
+
+        jatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        jatekos.setForeground(new java.awt.Color(204, 0, 51));
+        jatekosnev.add(jatekos);
+        jatekos.setBounds(140, 550, 260, 30);
+
+        nevkiir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        nevkiir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        nevkiir.setText("Játékos:");
+        jatekosnev.add(nevkiir);
+        nevkiir.setBounds(20, 550, 110, 30);
+
+        kezdokerdit1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        kezdokerdit1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        kezdokerdit1.setText("Kredit:");
+        jatekosnev.add(kezdokerdit1);
+        kezdokerdit1.setBounds(20, 590, 110, 30);
+
+        kilepesPanel.setBackground(new java.awt.Color(204, 0, 51));
+        kilepesPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                kilepesPanelMousePressed(evt);
             }
         });
+
+        kilepesGomb.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        kilepesGomb.setForeground(new java.awt.Color(255, 255, 255));
+        kilepesGomb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kilepesGomb.setText("X");
+        kilepesGomb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kilepesGombMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout kilepesPanelLayout = new javax.swing.GroupLayout(kilepesPanel);
+        kilepesPanel.setLayout(kilepesPanelLayout);
+        kilepesPanelLayout.setHorizontalGroup(
+            kilepesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kilepesGomb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        kilepesPanelLayout.setVerticalGroup(
+            kilepesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(kilepesGomb, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout hatterLayout = new javax.swing.GroupLayout(hatter);
+        hatter.setLayout(hatterLayout);
+        hatterLayout.setHorizontalGroup(
+            hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hatterLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(kilepesPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hatterLayout.createSequentialGroup()
+                        .addComponent(jatekosnev, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        hatterLayout.setVerticalGroup(
+            hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hatterLayout.createSequentialGroup()
+                .addGroup(hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(hatterLayout.createSequentialGroup()
+                        .addComponent(kilepesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jatekosnev, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(hatterLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 245, Short.MAX_VALUE)
-                .addComponent(kilepesGomb)
-                .addContainerGap())
+            .addComponent(hatter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(kilepesGomb))
+            .addComponent(hatter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     
     int click = 0;
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        click++;
-        if(click == 1){
-            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
-        } else if(click == 2){
 
-            model.dobas();
-            int dobas = model.getKocka();
+    private void rajzolKocka() {
+        int dobas = Start.model.getKocka();
+        String s = String.valueOf(dobas);
+        System.out.println("dobás --> " + s);
 
-            String s = String.valueOf(dobas);
-            System.out.println(s);
-            switch(dobas){
+        switch(dobas){
                 case 1:
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png")));
                     break;
@@ -787,35 +877,10 @@ public class Tabla extends javax.swing.JFrame {
                 case 6:
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/hat.png")));
                     break;
-            }
+        };
+    };
 
-            model.move();
-            refresh(model.pos());
-
-            click = 0;
-        }
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        Neptunuzenetjelzes t = new Neptunuzenetjelzes();
-        t.setVisible(true);
-        t.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void kilepesGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kilepesGombActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_kilepesGombActionPerformed
-
-    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
-        mouseX = evt.getX();
-        mouseY = evt.getY();
-    }//GEN-LAST:event_formMousePressed
-
-    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
-        setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
-    }//GEN-LAST:event_formMouseDragged
-
-    private void refresh(int[] pos) {
+    private void rajzolBabuk(int[] pos) {
             ArrayList <javax.swing.JLabel> sargaAL = new ArrayList <javax.swing.JLabel> (sargaCollection);
             ArrayList <javax.swing.JLabel> pirosAL = new ArrayList <javax.swing.JLabel> (pirosCollection);		
             ArrayList <javax.swing.JLabel> kekAL = new ArrayList <javax.swing.JLabel> (kekCollection);
@@ -827,19 +892,62 @@ public class Tabla extends javax.swing.JFrame {
                     kekAL.get(i).setVisible(false);
                     zoldAL.get(i).setVisible(false);
             }
-
-            /* pos[] = {sárga játékos poziciója, piros, kek, zold} */
-            sargaAL.get(pos[0]).setVisible(true);
-            pirosAL.get(pos[1]).setVisible(true);
-            kekAL.get(pos[2]).setVisible(true);
-            zoldAL.get(pos[3]).setVisible(true);
-
+            
+            if (pos[0] != -1) sargaAL.get(pos[0]).setVisible(true);
+            if (pos[1] != -1) pirosAL.get(pos[1]).setVisible(true);
+            if (pos[2] != -1) kekAL.get(pos[2]).setVisible(true);
+            if (pos[3] != -1) zoldAL.get(pos[3]).setVisible(true);
     };
+
+    private void kiirMezo() {
+            String s = Start.model.getMezo();
+            mezonev.setText(s);
+    };    
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        click++;
+        if(click == 1){
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
+        } else if(click == 2){
+            Start.model.dobas();
+            rajzolKocka();
+            Start.model.move();
+            mezonev.setText( Start.model.getMezo() );
+            rajzolBabuk(Start.model.pos());
+            Start.model.mezoHatasa();
+            kredit.setText(String.valueOf( Start.model.getKredit() ));
+            Start.model.kovJatekos();
+            jatekos.setText((String) Start.model.getName() );
+
+            click = 0;
+        }
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void neptunUzenetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_neptunUzenetMouseClicked
+    }//GEN-LAST:event_neptunUzenetMouseClicked
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
+    }//GEN-LAST:event_formMouseDragged
+
+    private void kilepesGombMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kilepesGombMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_kilepesGombMouseClicked
+
+    private void kilepesPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kilepesPanelMousePressed
+        System.exit(0);
+    }//GEN-LAST:event_kilepesPanelMousePressed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -871,7 +979,6 @@ public class Tabla extends javax.swing.JFrame {
         });
     }
 
-    private Model model = new Model();
     private Collection sargaCollection = new ArrayList();
     private Collection pirosCollection = new ArrayList();
     private Collection kekCollection = new ArrayList();
@@ -1007,10 +1114,20 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JLabel Zold7;
     private javax.swing.JLabel Zold8;
     private javax.swing.JLabel Zold9;
+    private javax.swing.JPanel hatter;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton kilepesGomb;
+    private javax.swing.JLabel jatekos;
+    private javax.swing.JPanel jatekosnev;
+    private javax.swing.JLabel kezdokerdit;
+    private javax.swing.JLabel kezdokerdit1;
+    private javax.swing.JLabel kilepesGomb;
+    private javax.swing.JPanel kilepesPanel;
+    private javax.swing.JLabel kredit;
+    private javax.swing.JLabel mezonev;
+    private javax.swing.JLabel neptunUzenet;
+    private javax.swing.JLabel nevkiir;
     // End of variables declaration//GEN-END:variables
 
     private void println(Random rand) {
@@ -1146,21 +1263,6 @@ public class Tabla extends javax.swing.JFrame {
         pirosCollection.add(Piros30);
         pirosCollection.add(Piros31);
         pirosCollection.add(Piros32);
+        
     };
-
-    private void initTokens() {
-        ArrayList <javax.swing.JLabel> sargaAL = new ArrayList <javax.swing.JLabel> (sargaCollection);
-        ArrayList <javax.swing.JLabel> pirosAL = new ArrayList <javax.swing.JLabel> (pirosCollection);		
-        ArrayList <javax.swing.JLabel> kekAL = new ArrayList <javax.swing.JLabel> (kekCollection);
-        ArrayList <javax.swing.JLabel> zoldAL = new ArrayList <javax.swing.JLabel> (zoldCollection);
-
-        for (int i = 1; i <= 31; i++) {
-            sargaAL.get(i).setVisible(false);
-            pirosAL.get(i).setVisible(false);
-            kekAL.get(i).setVisible(false);
-            zoldAL.get(i).setVisible(false);
-        }
-
-    }
-
 }

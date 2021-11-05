@@ -67,24 +67,24 @@ public class Uzenet extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(10, 450, 110, 25);
+        jButton1.setBounds(10, 450, 110, 23);
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(74, 74, 74));
-        jLabel3.setText("Teszt...");
+        jLabel3.setText(Start.model.getNeptunCimzett());
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(110, 120, 640, 30);
+        jLabel3.setBounds(90, 120, 640, 30);
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(74, 74, 74));
-        jLabel2.setText("Címzettek");
+        jLabel2.setText("Címzett");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(40, 120, 70, 30);
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Tisztelt hallgatók! Ez egy teszt...");
+        jTextArea1.setText(Start.model.getNeptunMsg());
         jTextArea1.setToolTipText("");
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -117,25 +117,25 @@ public class Uzenet extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(74, 74, 74));
-        jLabel8.setText("Teszt...");
+        jLabel8.setText(Start.model.getNeptunTargy());
         jPanel1.add(jLabel8);
         jLabel8.setBounds(80, 30, 640, 30);
 
         jLabel9.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(74, 74, 74));
-        jLabel9.setText("Teszt...");
+        jLabel9.setText(Start.model.getNeptunKuldo());
         jPanel1.add(jLabel9);
         jLabel9.setBounds(80, 50, 640, 30);
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(74, 74, 74));
-        jLabel10.setText("Teszt...");
+        jLabel10.setText(Start.model.getNeptunKuldesIdeje());
         jPanel1.add(jLabel10);
         jLabel10.setBounds(120, 70, 640, 30);
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(74, 74, 74));
-        jLabel11.setText("Teszt...");
+        jLabel11.setText(Start.model.getNeptunErvenyesseg());
         jPanel1.add(jLabel11);
         jLabel11.setBounds(150, 90, 640, 40);
 

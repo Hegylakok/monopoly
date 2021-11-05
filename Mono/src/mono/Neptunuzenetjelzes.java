@@ -46,6 +46,7 @@ public class Neptunuzenetjelzes extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
         jButton1.setText("Tovább");
@@ -55,21 +56,21 @@ public class Neptunuzenetjelzes extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(10, 150, 75, 25);
+        jButton1.setBounds(10, 140, 69, 23);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/neptunuzenet.png"))); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, -10, 457, 200);
+        jLabel2.setBounds(0, 0, 440, 170);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

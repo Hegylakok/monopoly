@@ -5,11 +5,16 @@
  */
 package mono;
 
+import static java.lang.ModuleLayer.empty;
+import static java.util.Optional.empty;
+
 /**
  *
  * @author dalos
  */
 public class Start extends javax.swing.JFrame {
+
+    public static Model model = new Model();
 
     private int mouseX;
     private int mouseY;
@@ -176,19 +181,19 @@ public class Start extends javax.swing.JFrame {
         jSeparator1.setBounds(361, 240, 0, 187);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\piros.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/sarga.png"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(100, 250, 30, 50);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\kek.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/piros.png"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(260, 250, 30, 50);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\zold.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kek.png"))); // NOI18N
         jPanel1.add(jLabel7);
         jLabel7.setBounds(430, 250, 30, 50);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\330\\OneDrive - elte.hu\\Asztal\\Mono\\src\\Kepek\\sarga.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/zold.png"))); // NOI18N
         jPanel1.add(jLabel8);
         jLabel8.setBounds(600, 240, 30, 60);
 
@@ -229,17 +234,60 @@ public class Start extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     private void startGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGombActionPerformed
+
+
+        int jatekosszam = Integer.parseInt(jatekosokSzama.getSelectedItem().toString());
+        System.out.println("jatekosszam@startGomb " + jatekosszam);
+
+        model.setPlayerCount(jatekosszam);
+
+        /* don't construct Tabla until playerCount is set */
         Tabla t = new Tabla();
-        t.setVisible(true);
-        t.setLocationRelativeTo(null);
-        setVisible(false);
+
+        int temp = 0;
+        if(elsoJatekos.getText().isEmpty() == false){
+           model.setName(0, elsoJatekos.getText());
+           temp++;
+        }
+        if(masodikJatekos.getText().isEmpty() == false){
+           model.setName(1, masodikJatekos.getText());
+           temp++;
+        }
+        if(harmadikJatekos.getText().isEmpty() == false){
+           model.setName(2, harmadikJatekos.getText());
+           temp++;
+        }
+        if(negyedikJatekos.getText().isEmpty() == false){
+           model.setName(3, negyedikJatekos.getText());
+           temp++;
+        }
+        System.out.println("temp@startGomb " + temp);
+        if(temp == jatekosszam){
+            t.setVisible(true);
+            t.setLocationRelativeTo(null);
+            setVisible(false);
+        }
     }//GEN-LAST:event_startGombActionPerformed
 
     private void kilepesGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kilepesGombActionPerformed
         System.exit(0);
     }//GEN-LAST:event_kilepesGombActionPerformed
+
+    private void harmadikJatekosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_harmadikJatekosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_harmadikJatekosActionPerformed
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
+    }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jatekosokSzamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jatekosokSzamaActionPerformed
         String valasztas = jatekosokSzama.getSelectedItem().toString();
@@ -277,26 +325,13 @@ public class Start extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jatekosokSzamaActionPerformed
 
-    private void harmadikJatekosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_harmadikJatekosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_harmadikJatekosActionPerformed
+    private void jatekosokSzamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jatekosokSzamaFocusLost
 
-    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
-        mouseX = evt.getX();
-        mouseY = evt.getY();
-    }//GEN-LAST:event_jPanel1MousePressed
-
-    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
-    }//GEN-LAST:event_jPanel1MouseDragged
+    }//GEN-LAST:event_jatekosokSzamaFocusLost
 
     private void jatekosokSzamaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jatekosokSzamaItemStateChanged
-        
-    }//GEN-LAST:event_jatekosokSzamaItemStateChanged
 
-    private void jatekosokSzamaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jatekosokSzamaFocusLost
-        
-    }//GEN-LAST:event_jatekosokSzamaFocusLost
+    }//GEN-LAST:event_jatekosokSzamaItemStateChanged
 
     /**
      * @param args the command line arguments
