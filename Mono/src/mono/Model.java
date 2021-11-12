@@ -1,5 +1,6 @@
 package mono;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -11,8 +12,22 @@ public class Model {
     private static String[] buntetesek = {"0", "0","-5","0","0","0","8","0","-4","0","-8","0","0","0","5","0","0","0","10","0","0","0","random","0","-3","0","4","0","0","0","3","0"};
 
     private static String[][] neptunok = {
-        {"1targy", "1kuldo", "1ido", "1erveny", "1cimzett", "1msg", "0"},
-        {"2targy", "2kuldo", "2ido", "2erveny", "2cimzett", "2msg", "0"}
+        {"Értesítés önköltséges formára történő átsorolásról", "Nagy Béla", "","Mivel már önköltséges képzésen veszel részt, ezért 8 kreditet vesztettél.", "-8"},
+        {"Ügyintéző általi lejelentkeztetés történt egy tantárgyról", "Filip András", "", "Mivel lejelentkeztettek egy tantárgyról, ezért 5 kreditet vesztetél", "-5"},
+        {"Kurzus órarendi adatai módosultak", "Kis Kriszta", "", "Módosulás történt az órarendben és így ütköznek a tantárgyaid. 3 kreditet elbuktál.", "-3"},
+        {"Kurzus órarendi adatai módosultak", "Kis Kriszta", "", "Módosulás történt az órarendben és így már nem ütköznek a tantárgyaid. 3 kreditre teszel szert.", "3"},
+        {"Kérés státusz módosítása történt", "Békés Csaba", "", "Értesítjük, hogy az Ön által 'Rendszeres szociális támogatás' nevű kérvény státusza 'Elfogadva' lett. 2 kreditre teszel szert.", "2"},
+        {"Kérés státusz módosítása történt", "Békés Csaba", "", "Értesítjük, hogy az Ön által 'Rendszeres szociális támogatás' nevű kérvény státusza 'Elutasítva' lett. 2 kreditre elvesztessz.", "-2"},
+        {"Kérés státusz módosítása történt", "Békés Csaba", "", "Értesítjük, hogy az Ön által 'Kollégiumi jelentkezés' nevű kérvény státusza 'Elfogadva' lett. 2 kreditre teszel szert.", "2"},
+        {"Kérés státusz módosítása történt", "Békés Csaba", "", "Értesítjük, hogy az Ön által 'Kollégiumi jelentkezés' nevű kérvény státusza 'Elutasítva' lett. 2 kreditre elvesztessz.", "-2"},
+        {"Az 5vös 5km-es futóversenyen vettél részt", "Piros Kálmán", "", "Az 5vös 5km-es futóversenyen 1. helyet értél el. 8 kreditre tettél szert.", "8"},
+        {"Az 5vös 5km-es futóversenyen vettél részt", "Piros Kálmán", "", "Az 5vös 5km-es futóversenyen 2. helyet értél el. 5 kreditre tettél szert.", "5"},
+        {"Az 5vös 5km-es futóversenyen vettél részt", "Piros Kálmán", "", "Az 5vös 5km-es futóversenyen 3. helyet értél el. 3 kreditre tettél szert.", "3"},
+        {"Az 5vös 5km-es futóversenyen vettél részt", "Piros Kálmán", "", "Az 5vös 5km-es futóversenyen jól teljesítettél. 2 kreditre tettél szert.", "2"},
+        {"Az 5vös 5km-es futóversenyen vettél részt", "Piros Kálmán", "", "Az 5vös 5km-es futóversenyen balesetet szenvedtél. 5 kreditre elvesztesz.", "-5"},
+        {"A B-Clubban csapattál", "Téti Ilona", "", "A B-Clubban csapattál hajnalig és tönkrementél. Elbuktál 3 kreditet.", "-3"},
+        {"A B-Clubban csapattál", "Téti Ilona", "", "A B-Clubban csapattál és mértékkel ittál. 3 kreditre teszel szert.", "3"},
+        {"Teams-ről ledobott a wifi", "Cserepes Fruzsina", "", "Elment a wifi előadás közben és mire visszajött annyi mindenrő lemaradtál, hogy azt se tudod, hogy mi van. 2 kreditet elvesztessz.", "-2"},
     };
 
     private static int aktivJatekos = 0;
@@ -48,11 +63,19 @@ public class Model {
 
     public String getNeptunTargy() {return neptunok[randNeptun][0];}
     public String getNeptunKuldo() {return neptunok[randNeptun][1];}
-    public String getNeptunKuldesIdeje() {return neptunok[randNeptun][2];}
-    public String getNeptunErvenyesseg() {return neptunok[randNeptun][3];}
-    public String getNeptunCimzett() {return neptunok[randNeptun][4];}
-    public String getNeptunMsg() {return neptunok[randNeptun][5];}
-    public String getNeptunBuntetes() {return neptunok[randNeptun][6];}
+    public String getNeptunKuldesIdeje() { 
+	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	Date date = new Date();
+	return formatter.format(date);}
+    public String getNeptunErvenyesseg() {return neptunok[randNeptun][2];}
+    public String getNeptunCimzett() {
+        if (aktivJatekos==0) 
+        {return jatekosok.get(playerCount-1).getName();} 
+        else
+        {return jatekosok.get(aktivJatekos-1).getName();}
+    }
+    public String getNeptunMsg() {return neptunok[randNeptun][3];}
+    public String getNeptunBuntetes() {return neptunok[randNeptun][4];}
 
     public void dobas() {
         Random rand = new Random();
@@ -74,7 +97,7 @@ public class Model {
     public void neptunMezo() {
         Random rand = new Random();
         int min = 0;
-        int max = 2;
+        int max = 16;
         randNeptun = rand.nextInt(max-min);
         System.out.println("randNeptun " + String.valueOf(randNeptun));
         int kredit = jatekosok.get(aktivJatekos).getKredit();
