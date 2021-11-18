@@ -171,17 +171,49 @@ public class Tabla extends javax.swing.JFrame {
         Sarga32 = new javax.swing.JLabel();
         Kek32 = new javax.swing.JLabel();
         Zold32 = new javax.swing.JLabel();
+        Mezo1 = new javax.swing.JLabel();
+        Mezo2 = new javax.swing.JLabel();
+        Mezo3 = new javax.swing.JLabel();
+        Mezo4 = new javax.swing.JLabel();
+        Mezo5 = new javax.swing.JLabel();
+        Mezo6 = new javax.swing.JLabel();
+        Mezo7 = new javax.swing.JLabel();
+        Mezo9 = new javax.swing.JLabel();
+        Mezo10 = new javax.swing.JLabel();
+        Mezo11 = new javax.swing.JLabel();
+        Mezo12 = new javax.swing.JLabel();
+        Mezo13 = new javax.swing.JLabel();
+        Mezo14 = new javax.swing.JLabel();
+        Mezo15 = new javax.swing.JLabel();
+        Mezo17 = new javax.swing.JLabel();
+        Mezo18 = new javax.swing.JLabel();
+        Mezo19 = new javax.swing.JLabel();
+        Mezo20 = new javax.swing.JLabel();
+        Mezo21 = new javax.swing.JLabel();
+        Mezo22 = new javax.swing.JLabel();
+        Mezo23 = new javax.swing.JLabel();
+        Mezo25 = new javax.swing.JLabel();
+        Mezo26 = new javax.swing.JLabel();
+        Mezo27 = new javax.swing.JLabel();
+        Mezo28 = new javax.swing.JLabel();
+        Mezo29 = new javax.swing.JLabel();
+        Mezo30 = new javax.swing.JLabel();
+        Mezo31 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         neptunUzenet = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Tabla = new javax.swing.JLabel();
-        jatekosnev = new javax.swing.JPanel();
+        kezdokerdit1 = new javax.swing.JPanel();
         mezonev = new javax.swing.JLabel();
         kezdokerdit = new javax.swing.JLabel();
         kredit = new javax.swing.JLabel();
         jatekos = new javax.swing.JLabel();
+        vasarlas = new javax.swing.JLabel();
+        vasarlasara = new javax.swing.JLabel();
+        birtokoltmezoszama = new javax.swing.JLabel();
         nevkiir = new javax.swing.JLabel();
-        kezdokerdit1 = new javax.swing.JLabel();
+        kezdokerdit2 = new javax.swing.JLabel();
+        birtokoltmezo = new javax.swing.JLabel();
         kilepesPanel = new javax.swing.JPanel();
         kilepesGomb = new javax.swing.JLabel();
 
@@ -717,6 +749,146 @@ public class Tabla extends javax.swing.JFrame {
         jPanel1.add(Zold32);
         Zold32.setBounds(540, 10, 24, 40);
 
+        Mezo1.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo1.setOpaque(true);
+        jPanel1.add(Mezo1);
+        Mezo1.setBounds(608, 118, 29, 67);
+
+        Mezo2.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo2.setOpaque(true);
+        jPanel1.add(Mezo2);
+        Mezo2.setBounds(608, 188, 29, 67);
+
+        Mezo3.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo3.setOpaque(true);
+        jPanel1.add(Mezo3);
+        Mezo3.setBounds(608, 258, 29, 67);
+
+        Mezo4.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo4.setOpaque(true);
+        jPanel1.add(Mezo4);
+        Mezo4.setBounds(608, 328, 29, 67);
+
+        Mezo5.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo5.setOpaque(true);
+        jPanel1.add(Mezo5);
+        Mezo5.setBounds(608, 398, 29, 67);
+
+        Mezo6.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo6.setOpaque(true);
+        jPanel1.add(Mezo6);
+        Mezo6.setBounds(608, 468, 29, 67);
+
+        Mezo7.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo7.setOpaque(true);
+        jPanel1.add(Mezo7);
+        Mezo7.setBounds(608, 538, 29, 67);
+
+        Mezo9.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo9.setOpaque(true);
+        jPanel1.add(Mezo9);
+        Mezo9.setBounds(538, 608, 67, 24);
+
+        Mezo10.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo10.setOpaque(true);
+        jPanel1.add(Mezo10);
+        Mezo10.setBounds(468, 608, 67, 24);
+
+        Mezo11.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo11.setOpaque(true);
+        jPanel1.add(Mezo11);
+        Mezo11.setBounds(398, 608, 67, 24);
+
+        Mezo12.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo12.setOpaque(true);
+        jPanel1.add(Mezo12);
+        Mezo12.setBounds(328, 608, 67, 24);
+
+        Mezo13.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo13.setOpaque(true);
+        jPanel1.add(Mezo13);
+        Mezo13.setBounds(258, 608, 67, 24);
+
+        Mezo14.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo14.setOpaque(true);
+        jPanel1.add(Mezo14);
+        Mezo14.setBounds(188, 608, 67, 24);
+
+        Mezo15.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo15.setOpaque(true);
+        jPanel1.add(Mezo15);
+        Mezo15.setBounds(118, 608, 67, 24);
+
+        Mezo17.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo17.setOpaque(true);
+        jPanel1.add(Mezo17);
+        Mezo17.setBounds(90, 538, 25, 67);
+
+        Mezo18.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo18.setOpaque(true);
+        jPanel1.add(Mezo18);
+        Mezo18.setBounds(90, 468, 25, 67);
+
+        Mezo19.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo19.setOpaque(true);
+        jPanel1.add(Mezo19);
+        Mezo19.setBounds(90, 398, 25, 67);
+
+        Mezo20.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo20.setOpaque(true);
+        jPanel1.add(Mezo20);
+        Mezo20.setBounds(90, 328, 25, 67);
+
+        Mezo21.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo21.setOpaque(true);
+        jPanel1.add(Mezo21);
+        Mezo21.setBounds(90, 258, 25, 67);
+
+        Mezo22.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo22.setOpaque(true);
+        jPanel1.add(Mezo22);
+        Mezo22.setBounds(90, 188, 25, 67);
+
+        Mezo23.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo23.setOpaque(true);
+        jPanel1.add(Mezo23);
+        Mezo23.setBounds(90, 118, 25, 67);
+
+        Mezo25.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo25.setOpaque(true);
+        jPanel1.add(Mezo25);
+        Mezo25.setBounds(118, 89, 67, 26);
+
+        Mezo26.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo26.setOpaque(true);
+        jPanel1.add(Mezo26);
+        Mezo26.setBounds(188, 89, 67, 26);
+
+        Mezo27.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo27.setOpaque(true);
+        jPanel1.add(Mezo27);
+        Mezo27.setBounds(258, 89, 67, 26);
+
+        Mezo28.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo28.setOpaque(true);
+        jPanel1.add(Mezo28);
+        Mezo28.setBounds(328, 89, 67, 26);
+
+        Mezo29.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo29.setOpaque(true);
+        jPanel1.add(Mezo29);
+        Mezo29.setBounds(398, 89, 67, 26);
+
+        Mezo30.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo30.setOpaque(true);
+        jPanel1.add(Mezo30);
+        Mezo30.setBounds(468, 89, 67, 26);
+
+        Mezo31.setBackground(new java.awt.Color(255, 255, 255));
+        Mezo31.setOpaque(true);
+        jPanel1.add(Mezo31);
+        Mezo31.setBounds(538, 89, 67, 26);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -745,43 +917,71 @@ public class Tabla extends javax.swing.JFrame {
         jPanel1.add(Tabla);
         Tabla.setBounds(0, 0, 730, 723);
 
-        jatekosnev.setBackground(new java.awt.Color(255, 255, 255));
-        jatekosnev.setLayout(null);
+        kezdokerdit1.setBackground(new java.awt.Color(255, 255, 255));
+        kezdokerdit1.setLayout(null);
 
         mezonev.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         mezonev.setForeground(new java.awt.Color(204, 0, 51));
         mezonev.setText("Start!");
         mezonev.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jatekosnev.add(mezonev);
+        kezdokerdit1.add(mezonev);
         mezonev.setBounds(140, 630, 380, 60);
 
         kezdokerdit.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         kezdokerdit.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         kezdokerdit.setText("Mező:");
-        jatekosnev.add(kezdokerdit);
+        kezdokerdit1.add(kezdokerdit);
         kezdokerdit.setBounds(20, 630, 110, 30);
 
         kredit.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         kredit.setForeground(new java.awt.Color(204, 0, 51));
-        jatekosnev.add(kredit);
+        kezdokerdit1.add(kredit);
         kredit.setBounds(140, 590, 150, 30);
 
         jatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         jatekos.setForeground(new java.awt.Color(204, 0, 51));
-        jatekosnev.add(jatekos);
+        kezdokerdit1.add(jatekos);
         jatekos.setBounds(140, 550, 260, 30);
+
+        vasarlas.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        vasarlas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        vasarlas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/mezovasarlas.png"))); // NOI18N
+        vasarlas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vasarlasMouseClicked(evt);
+            }
+        });
+        kezdokerdit1.add(vasarlas);
+        vasarlas.setBounds(60, 80, 172, 64);
+
+        vasarlasara.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        vasarlasara.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        vasarlasara.setText("-20 Kredit");
+        kezdokerdit1.add(vasarlasara);
+        vasarlasara.setBounds(230, 100, 120, 30);
+
+        birtokoltmezoszama.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        birtokoltmezoszama.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        birtokoltmezoszama.setText("Birtokolt mezők száma:");
+        kezdokerdit1.add(birtokoltmezoszama);
+        birtokoltmezoszama.setBounds(0, 160, 270, 30);
 
         nevkiir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         nevkiir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nevkiir.setText("Játékos:");
-        jatekosnev.add(nevkiir);
+        kezdokerdit1.add(nevkiir);
         nevkiir.setBounds(20, 550, 110, 30);
 
-        kezdokerdit1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        kezdokerdit1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        kezdokerdit1.setText("Kredit:");
-        jatekosnev.add(kezdokerdit1);
-        kezdokerdit1.setBounds(20, 590, 110, 30);
+        kezdokerdit2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        kezdokerdit2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        kezdokerdit2.setText("Kredit:");
+        kezdokerdit1.add(kezdokerdit2);
+        kezdokerdit2.setBounds(20, 590, 110, 30);
+
+        birtokoltmezo.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
+        birtokoltmezo.setForeground(new java.awt.Color(204, 0, 51));
+        kezdokerdit1.add(birtokoltmezo);
+        birtokoltmezo.setBounds(280, 160, 70, 30);
 
         kilepesPanel.setBackground(new java.awt.Color(204, 0, 51));
         kilepesPanel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -822,7 +1022,7 @@ public class Tabla extends javax.swing.JFrame {
                 .addGroup(hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(kilepesPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hatterLayout.createSequentialGroup()
-                        .addComponent(jatekosnev, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(kezdokerdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         hatterLayout.setVerticalGroup(
@@ -832,7 +1032,7 @@ public class Tabla extends javax.swing.JFrame {
                     .addGroup(hatterLayout.createSequentialGroup()
                         .addComponent(kilepesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jatekosnev, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(kezdokerdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(hatterLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -912,6 +1112,7 @@ public class Tabla extends javax.swing.JFrame {
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
             jatekos.setText((String) Start.model.getName() );
             kredit.setText(String.valueOf( Start.model.getKredit() ));
+            birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
         } else if(click == 2){
             Start.model.dobas();
             rajzolKocka();
@@ -921,6 +1122,7 @@ public class Tabla extends javax.swing.JFrame {
             Start.model.mezoHatasa();
             jatekos.setText((String) Start.model.getName() );
             kredit.setText(String.valueOf( Start.model.getKredit() ));
+            birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
             Start.model.kovJatekos();
 
 
@@ -947,6 +1149,17 @@ public class Tabla extends javax.swing.JFrame {
     private void kilepesPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kilepesPanelMousePressed
         System.exit(0);
     }//GEN-LAST:event_kilepesPanelMousePressed
+
+    private void vasarlasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vasarlasMouseClicked
+        if(Start.model.getKredit()>19){
+        jatekos.setText((String) Start.model.getName() );
+        mezonev.setText( Start.model.getMezo() );
+        Start.model.mezoVasarlas();
+        birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
+        kredit.setText(String.valueOf( Start.model.getKredit()));
+        Start.model.kovJatekos();
+        }
+    }//GEN-LAST:event_vasarlasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -988,6 +1201,7 @@ public class Tabla extends javax.swing.JFrame {
     private Collection pirosCollection = new ArrayList();
     private Collection kekCollection = new ArrayList();
     private Collection zoldCollection = new ArrayList();
+    private Collection mezoCollection = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Kek1;
@@ -1022,6 +1236,34 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JLabel Kek7;
     private javax.swing.JLabel Kek8;
     private javax.swing.JLabel Kek9;
+    private javax.swing.JLabel Mezo1;
+    private javax.swing.JLabel Mezo10;
+    private javax.swing.JLabel Mezo11;
+    private javax.swing.JLabel Mezo12;
+    private javax.swing.JLabel Mezo13;
+    private javax.swing.JLabel Mezo14;
+    private javax.swing.JLabel Mezo15;
+    private javax.swing.JLabel Mezo17;
+    private javax.swing.JLabel Mezo18;
+    private javax.swing.JLabel Mezo19;
+    private javax.swing.JLabel Mezo2;
+    private javax.swing.JLabel Mezo20;
+    private javax.swing.JLabel Mezo21;
+    private javax.swing.JLabel Mezo22;
+    private javax.swing.JLabel Mezo23;
+    private javax.swing.JLabel Mezo25;
+    private javax.swing.JLabel Mezo26;
+    private javax.swing.JLabel Mezo27;
+    private javax.swing.JLabel Mezo28;
+    private javax.swing.JLabel Mezo29;
+    private javax.swing.JLabel Mezo3;
+    private javax.swing.JLabel Mezo30;
+    private javax.swing.JLabel Mezo31;
+    private javax.swing.JLabel Mezo4;
+    private javax.swing.JLabel Mezo5;
+    private javax.swing.JLabel Mezo6;
+    private javax.swing.JLabel Mezo7;
+    private javax.swing.JLabel Mezo9;
     private javax.swing.JLabel Piros1;
     private javax.swing.JLabel Piros10;
     private javax.swing.JLabel Piros11;
@@ -1119,20 +1361,24 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JLabel Zold7;
     private javax.swing.JLabel Zold8;
     private javax.swing.JLabel Zold9;
+    private javax.swing.JLabel birtokoltmezo;
+    private javax.swing.JLabel birtokoltmezoszama;
     private javax.swing.JPanel hatter;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jatekos;
-    private javax.swing.JPanel jatekosnev;
     private javax.swing.JLabel kezdokerdit;
-    private javax.swing.JLabel kezdokerdit1;
+    private javax.swing.JPanel kezdokerdit1;
+    private javax.swing.JLabel kezdokerdit2;
     private javax.swing.JLabel kilepesGomb;
     private javax.swing.JPanel kilepesPanel;
     private javax.swing.JLabel kredit;
     private javax.swing.JLabel mezonev;
     private javax.swing.JLabel neptunUzenet;
     private javax.swing.JLabel nevkiir;
+    private javax.swing.JLabel vasarlas;
+    private javax.swing.JLabel vasarlasara;
     // End of variables declaration//GEN-END:variables
 
     private void println(Random rand) {

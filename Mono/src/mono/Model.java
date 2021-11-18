@@ -56,6 +56,7 @@ public class Model {
     public void setPlayerCount(int x) { playerCount = x; }
 
     public int getKredit() {return jatekosok.get(aktivJatekos).getKredit();}
+    public int getBirtokoltMezoSzama() {return jatekosok.get(aktivJatekos).getBirtokoltMezoSzama();}
     public String getName() {return jatekosok.get(aktivJatekos).getName();}
     public void  setName(int i, String s) {jatekosok.get(i).setName(s);}
 
@@ -108,6 +109,15 @@ public class Model {
         t.setVisible(true);
         t.setLocationRelativeTo(null);
     };
+    
+    public void mezoVasarlas() {
+        int kr = jatekosok.get(aktivJatekos).getKredit();
+        int birtokol = jatekosok.get(aktivJatekos).getBirtokoltMezoSzama();
+        if(kr>19){
+        jatekosok.get(aktivJatekos).setKredit(kr-20);
+        jatekosok.get(aktivJatekos).setBirtokoltMezoSzama(birtokol+1);
+        }
+    }
 
     public void mezoHatasa() {
         Random rand = new Random();
