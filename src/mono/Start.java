@@ -13,9 +13,7 @@ import static java.util.Optional.empty;
  * @author dalos
  */
 public class Start extends javax.swing.JFrame {
-
     public static Model model = new Model();
-
     private int mouseX;
     private int mouseY;
     
@@ -240,7 +238,7 @@ public class Start extends javax.swing.JFrame {
         int jatekosszam = Integer.parseInt(jatekosokSzama.getSelectedItem().toString());
         System.out.println("jatekosszam@startGomb " + jatekosszam);
 
-        model.setPlayerCount(jatekosszam);
+        model.setJatekosMennyiseg(jatekosszam);
         Tabla t = new Tabla();
 
         model.setName(0, elsoJatekos.getText());
