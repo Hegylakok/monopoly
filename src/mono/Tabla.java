@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * @author dalos
  */
 public class Tabla extends javax.swing.JFrame {
-    
+
     private int mouseX;
     private int mouseY;
 
@@ -27,11 +27,11 @@ public class Tabla extends javax.swing.JFrame {
         buildCollections();
         Start.model.kezdoPoziciok();
         rajzolBabuk(Start.model.pos());
-        jatekos.setText((String) Start.model.getName() );
-        kredit.setText(String.valueOf( Start.model.getKredit() ));
+        jatekos.setText((String) Start.model.getName());
+        kredit.setText(String.valueOf(Start.model.getKredit()));
         vasarlas.setVisible(false);
         kovetkezojatekosgomb.setVisible(false);
-        
+
     }
 
     /**
@@ -993,7 +993,7 @@ public class Tabla extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     int click = 0;
 
     private void rajzolKocka() {
@@ -1001,91 +1001,103 @@ public class Tabla extends javax.swing.JFrame {
         String s = String.valueOf(dobas);
         System.out.println("dobás --> " + s);
 
-        switch(dobas){
-                case 1:
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png")));
-                    break;
-                case 2:
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ketto.png")));
-                    break;
-                case 3:
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/harom.png")));
-                    break;
-                case 4:
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/negy.png")));
-                    break;    
-                case 5:
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ot.png")));
-                    break;
-                case 6:
-                    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/hat.png")));
-                    break;
+        switch (dobas) {
+            case 1:
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png")));
+                break;
+            case 2:
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ketto.png")));
+                break;
+            case 3:
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/harom.png")));
+                break;
+            case 4:
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/negy.png")));
+                break;
+            case 5:
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ot.png")));
+                break;
+            case 6:
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/hat.png")));
+                break;
         };
-    };
+    }
+
+    ;
 
     private void rajzolBabuk(int[] pos) {
-            ArrayList <javax.swing.JLabel> sargaArrayList = new ArrayList <javax.swing.JLabel> (sargaCollection);
-            ArrayList <javax.swing.JLabel> pirosArrayList = new ArrayList <javax.swing.JLabel> (pirosCollection);		
-            ArrayList <javax.swing.JLabel> kekArrayList = new ArrayList <javax.swing.JLabel> (kekCollection);
-            ArrayList <javax.swing.JLabel> zoldArrayList = new ArrayList <javax.swing.JLabel> (zoldCollection);
+        ArrayList<javax.swing.JLabel> sargaArrayList = new ArrayList<javax.swing.JLabel>(sargaCollection);
+        ArrayList<javax.swing.JLabel> pirosArrayList = new ArrayList<javax.swing.JLabel>(pirosCollection);
+        ArrayList<javax.swing.JLabel> kekArrayList = new ArrayList<javax.swing.JLabel>(kekCollection);
+        ArrayList<javax.swing.JLabel> zoldArrayList = new ArrayList<javax.swing.JLabel>(zoldCollection);
 
-            for (int i = 0; i <= 31; i++) {
-                    sargaArrayList.get(i).setVisible(false);
-                    pirosArrayList.get(i).setVisible(false);
-                    kekArrayList.get(i).setVisible(false);
-                    zoldArrayList.get(i).setVisible(false);
-            }
-            
-            if (pos[0] != -1) sargaArrayList.get(pos[0]).setVisible(true);
-            if (pos[1] != -1) pirosArrayList.get(pos[1]).setVisible(true);
-            if (pos[2] != -1) kekArrayList.get(pos[2]).setVisible(true);
-            if (pos[3] != -1) zoldArrayList.get(pos[3]).setVisible(true);
-    };
+        for (int i = 0; i <= 31; i++) {
+            sargaArrayList.get(i).setVisible(false);
+            pirosArrayList.get(i).setVisible(false);
+            kekArrayList.get(i).setVisible(false);
+            zoldArrayList.get(i).setVisible(false);
+        }
+
+        if (pos[0] != -1) {
+            sargaArrayList.get(pos[0]).setVisible(true);
+        }
+        if (pos[1] != -1) {
+            pirosArrayList.get(pos[1]).setVisible(true);
+        }
+        if (pos[2] != -1) {
+            kekArrayList.get(pos[2]).setVisible(true);
+        }
+        if (pos[3] != -1) {
+            zoldArrayList.get(pos[3]).setVisible(true);
+        }
+    }
+
+    ;
 
     private void kiirMezo() {
-            String s = Start.model.getMezo();
-            mezonev.setText(s);
-    };
-    private void kiirMezoAra() {
-        if(Integer.parseInt(Start.model.getMezoAra()) == 0){
-           vasarlasara.setText("Nem megvásárolható mező!");
-           vasarlas.setVisible(false);
-        }
-        if(Integer.parseInt(Start.model.getMezoAra()) > 0){
-            vasarlasara.setText("Mező ára: "+Start.model.getMezoAra()+" kredit");
-        }    
+        String s = Start.model.getMezo();
+        mezonev.setText(s);
     }
-    
+
+    ;
+    private void kiirMezoAra() {
+        if (Integer.parseInt(Start.model.getMezoAra()) == 0) {
+            vasarlasara.setText("Nem megvásárolható mező!");
+            vasarlas.setVisible(false);
+        }
+        if (Integer.parseInt(Start.model.getMezoAra()) > 0) {
+            vasarlasara.setText("Mező ára: " + Start.model.getMezoAra() + " kredit");
+        }
+    }
+
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         click++;
-        if(click == 1){
+        if (click == 1) {
             kovetkezojatekosgomb.setVisible(false);
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
-            jatekos.setText((String) Start.model.getName() );
-            kredit.setText(String.valueOf( Start.model.getKredit() ));
+            jatekos.setText((String) Start.model.getName());
+            kredit.setText(String.valueOf(Start.model.getKredit()));
             birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
             kiirMezoAra();
             vasarlas.setVisible(false);
-        } else if(click == 2){
+        } else if (click == 2) {
             Start.model.dobas();
             rajzolKocka();
             Start.model.move();
-            mezonev.setText( Start.model.getMezo() );
+            mezonev.setText(Start.model.getMezo());
             rajzolBabuk(Start.model.pos());
             Start.model.mezoHatasa();
-            jatekos.setText((String) Start.model.getName() );
-            kredit.setText(String.valueOf( Start.model.getKredit() ));
+            jatekos.setText((String) Start.model.getName());
+            kredit.setText(String.valueOf(Start.model.getKredit()));
             birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
             kiirMezoAra();
 
-/*
-			if (Start.model.isJatekVege()) {
-				JatekVege jatekVege = new JatekVege();
-				jatekVege.setVisible(true);
-				jatekVege.setLocationRelativeTo(null);
-				setVisible(false);
-			};
-*/
+            if (Start.model.isJatekVege()) {
+                /* az ötletem az volt hogy a következő játékos 
+                            gombot átváltoztatjuk játék vége gombra itt
+                            a gomb megnyomsakor megy át a játék vége framera
+                 */
+            };
 
             kovetkezojatekosgomb.setVisible(true);
             vasarlas.setVisible(false);
@@ -1113,26 +1125,33 @@ public class Tabla extends javax.swing.JFrame {
     }//GEN-LAST:event_kilepesPanelMousePressed
 
     private void vasarlasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vasarlasMouseClicked
-        if(Start.model.getKredit()>= Integer.parseInt(Start.model.getMezoAra())&&Integer.parseInt(Start.model.getMezoAra())>0){
-            jatekos.setText((String) Start.model.getName() );
-            mezonev.setText( Start.model.getMezo() );
+        if (Start.model.getKredit() >= Integer.parseInt(Start.model.getMezoAra()) && Integer.parseInt(Start.model.getMezoAra()) > 0) {
+            jatekos.setText((String) Start.model.getName());
+            mezonev.setText(Start.model.getMezo());
             Start.model.mezoVasarlas();
             birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
-            kredit.setText(String.valueOf( Start.model.getKredit()));
+            kredit.setText(String.valueOf(Start.model.getKredit()));
             kiirMezoAra();
             kovetkezojatekosgomb.setVisible(true);
             vasarlas.setVisible(false);
-            click=2;
+            click = 2;
         }
     }//GEN-LAST:event_vasarlasMouseClicked
 
     private void kovetkezojatekosgombMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kovetkezojatekosgombMouseClicked
+        if (Start.model.isJatekVege()) {
+            JatekVege jatekVege = new JatekVege();
+            jatekVege.setVisible(true);
+            jatekVege.setLocationRelativeTo(null);
+            setVisible(false);
+        };
+
         vasarlas.setVisible(true);
         Start.model.kovJatekos();
         kovetkezojatekosgomb.setVisible(false);
-        jatekos.setText((String) Start.model.getName() );
-        mezonev.setText( Start.model.getMezo() );
-        kredit.setText(String.valueOf( Start.model.getKredit() ));
+        jatekos.setText((String) Start.model.getName());
+        mezonev.setText(Start.model.getMezo());
+        kredit.setText(String.valueOf(Start.model.getKredit()));
         birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
         vasarlasara.setVisible(true);
         kiirMezoAra();
@@ -1143,7 +1162,7 @@ public class Tabla extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1481,6 +1500,7 @@ public class Tabla extends javax.swing.JFrame {
         pirosCollection.add(Piros30);
         pirosCollection.add(Piros31);
         pirosCollection.add(Piros32);
-        
-    };
+
+    }
+;
 }
