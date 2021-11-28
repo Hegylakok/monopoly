@@ -91,6 +91,10 @@ public class Model {
     public int getMezonektulajdonosa() {
         return mezonektulajdonosa[jatekosok.get(kinekALepese).getPos()];
     }
+	
+	public int getMezonektulajdonosa(int i) {
+		return mezonektulajdonosa[i];
+	}
 
     public int getMezotranzakcio() {
         return mezotranzakcio[jatekosok.get(kinekALepese).getPos()];
@@ -159,7 +163,7 @@ public class Model {
 
     public boolean isJatekVege() {
         for (int i = 0; i < 4; i++) {
-            if (jatekosok.get(i).getKredit() >= 31) {
+            if (jatekosok.get(i).getKredit() >= 180) {
                 return true;
             };
         };
@@ -214,6 +218,9 @@ public class Model {
             jatekosok.get(getMezonektulajdonosa()).setKredit(
                     jatekosok.get(getMezonektulajdonosa()).getKredit() + getMezotranzakcio()
             );
+
+			/* debug */
+			System.out.println(jatekosok.get(kinekALepese).getName() + " kifizetett " + getMezotranzakcio() + " kredited " + jatekosok.get(getMezonektulajdonosa()).getName() + " számára.");
         };
     }
 

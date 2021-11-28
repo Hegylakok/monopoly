@@ -1023,8 +1023,6 @@ public class Tabla extends javax.swing.JFrame {
         };
     }
 
-    ;
-
     private void rajzolBabuk(int[] pos) {
         ArrayList<javax.swing.JLabel> sargaArrayList = new ArrayList<javax.swing.JLabel>(sargaCollection);
         ArrayList<javax.swing.JLabel> pirosArrayList = new ArrayList<javax.swing.JLabel>(pirosCollection);
@@ -1052,14 +1050,39 @@ public class Tabla extends javax.swing.JFrame {
         }
     }
 
-    ;
+	private void rajzolTulaj() {
+		ArrayList<javax.swing.JLabel> lista = new ArrayList<javax.swing.JLabel>(tulajCollection);
+
+		int listaIndex = 0;
+		int modelIndex = 1;
+		while (listaIndex < 16) {
+			int tulaj = Start.model.getMezonektulajdonosa(modelIndex);
+			switch (tulaj) {
+			case 0:
+				lista.get(listaIndex).setBackground(new java.awt.Color(229, 217, 0));
+				break;
+			case 1:
+				lista.get(listaIndex).setBackground(new java.awt.Color(236, 28, 36));
+				break;
+			case 2:
+				lista.get(listaIndex).setBackground(new java.awt.Color(0, 0, 255));
+				break;
+			case 3:
+				lista.get(listaIndex).setBackground(new java.awt.Color(14, 209, 69));
+				break;
+			}
+
+			listaIndex += 1;
+			modelIndex += 2;
+		}
+	}
+				
 
     private void kiirMezo() {
         String s = Start.model.getMezo();
         mezonev.setText(s);
     }
 
-    ;
     private void kiirMezoAra() {
         if (Integer.parseInt(Start.model.getMezoAra()) == 0) {
             vasarlasara.setText("Nem megvásárolható mező!");
@@ -1093,10 +1116,7 @@ public class Tabla extends javax.swing.JFrame {
             kiirMezoAra();
 
             if (Start.model.isJatekVege()) {
-                /* az ötletem az volt hogy a következő játékos 
-                            gombot átváltoztatjuk játék vége gombra itt
-                            a gomb megnyomsakor megy át a játék vége framera
-                 */
+				kovetkezojatekosgomb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/vegeajateknak.png")));
             };
 
             kovetkezojatekosgomb.setVisible(true);
@@ -1135,6 +1155,7 @@ public class Tabla extends javax.swing.JFrame {
             kovetkezojatekosgomb.setVisible(true);
             vasarlas.setVisible(false);
             click = 2;
+			rajzolTulaj();
         }
     }//GEN-LAST:event_vasarlasMouseClicked
 
@@ -1146,8 +1167,10 @@ public class Tabla extends javax.swing.JFrame {
             setVisible(false);
         };
 
-        vasarlas.setVisible(true);
         Start.model.kovJatekos();
+				if (Start.model.getMezonektulajdonosa() == -1 ) {
+            vasarlas.setVisible(true);
+				};
         kovetkezojatekosgomb.setVisible(false);
         jatekos.setText((String) Start.model.getName());
         mezonev.setText(Start.model.getMezo());
@@ -1199,6 +1222,7 @@ public class Tabla extends javax.swing.JFrame {
     private Collection kekCollection = new ArrayList();
     private Collection zoldCollection = new ArrayList();
     private Collection mezoCollection = new ArrayList();
+		private Collection tulajCollection = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Kek1;
@@ -1501,6 +1525,22 @@ public class Tabla extends javax.swing.JFrame {
         pirosCollection.add(Piros31);
         pirosCollection.add(Piros32);
 
-    }
+		tulajCollection.add(Mezo2);
+		tulajCollection.add(Mezo4);
+		tulajCollection.add(Mezo6);
+		tulajCollection.add(Mezo8);
+		tulajCollection.add(Mezo10);
+		tulajCollection.add(Mezo12);
+		tulajCollection.add(Mezo14);
+		tulajCollection.add(Mezo16);
+		tulajCollection.add(Mezo18);
+		tulajCollection.add(Mezo20);
+		tulajCollection.add(Mezo22);
+		tulajCollection.add(Mezo24);
+		tulajCollection.add(Mezo26);
+		tulajCollection.add(Mezo28);
+		tulajCollection.add(Mezo30);
+		tulajCollection.add(Mezo32);
+}
 ;
 }
