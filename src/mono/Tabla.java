@@ -32,6 +32,7 @@ public class Tabla extends javax.swing.JFrame {
         vasarlas.setVisible(false);
         kovetkezojatekosgomb.setVisible(false);
 
+        kockaForog();
     }
 
     /**
@@ -994,7 +995,6 @@ public class Tabla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    int click = 0;
 
     private void rajzolKocka() {
         int dobas = Start.model.getKocka();
@@ -1076,7 +1076,6 @@ public class Tabla extends javax.swing.JFrame {
 			modelIndex += 2;
 		}
 	}
-				
 
     private void kiirMezo() {
         String s = Start.model.getMezo();
@@ -1093,9 +1092,7 @@ public class Tabla extends javax.swing.JFrame {
         }
     }
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        click++;
-        if (click == 1) {
+    private void kockaForog() {
             kovetkezojatekosgomb.setVisible(false);
             jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
             jatekos.setText((String) Start.model.getName());
@@ -1103,7 +1100,11 @@ public class Tabla extends javax.swing.JFrame {
             birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
             kiirMezoAra();
             vasarlas.setVisible(false);
-        } else if (click == 2) {
+            kockaKlikkelheto = true;
+    }
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        if (kockaKlikkelheto) {
             Start.model.dobas();
             rajzolKocka();
             Start.model.move();
@@ -1124,6 +1125,8 @@ public class Tabla extends javax.swing.JFrame {
             if (Start.model.getMezonektulajdonosa() == -1 && Start.model.vanElegendoKredit()) {
                 vasarlas.setVisible(true);
             };
+			
+            kockaKlikkelheto = false;
         }
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -1157,7 +1160,7 @@ public class Tabla extends javax.swing.JFrame {
             kiirMezoAra();
             kovetkezojatekosgomb.setVisible(true);
             vasarlas.setVisible(false);
-            click = 2;
+            kockaKlikkelheto = false;
 			rajzolTulaj();
         }
     }//GEN-LAST:event_vasarlasMouseClicked
@@ -1181,7 +1184,8 @@ public class Tabla extends javax.swing.JFrame {
         birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
         vasarlasara.setVisible(true);
         kiirMezoAra();
-        click = 0;
+
+        kockaForog();
     }//GEN-LAST:event_kovetkezojatekosgombMouseClicked
 
     /**
@@ -1220,6 +1224,7 @@ public class Tabla extends javax.swing.JFrame {
         });
     }
 
+	boolean kockaKlikkelheto = false;
     private Collection sargaCollection = new ArrayList();
     private Collection pirosCollection = new ArrayList();
     private Collection kekCollection = new ArrayList();
