@@ -18,7 +18,7 @@ public class Model {
         "<html><body>Ösztöndíj<br>+30 kredit</body></html>"};
 
     private static String[] buntetesek = {"0", "0", "-5", "0", "0", "0", "8", "0", "-4", "0", "-8", "0", "0", "0", "5", "0", "0", "0", "10", "0", "0", "0", "random", "0", "-3", "0", "4", "0", "0", "0", "3", "0"};
-    private static String[] mezoara = {"0", "2", "0", "3", "0", "5", "0", "6", "0", "8", "0", "10", "0", "12", "0", "12", "0", "14", "0", "14", "0", "16", "0", "18", "0", "20", "0",
+    private static String[] mezoara = {"0", "2", "0", "3", "0", "5", "0", "6", "0", "8", "0", "10", "0", "12", "0", "12", "0", "14", "0", "14", "0", "16", "0", "18", "0", "20", "0", "20", "0",
         "22", "0", "24"};
     private static int[] mezotranzakcio = {0, 2, 0, 3, 0, 4, 0, 4, 0, 6, 0, 8, 0, 9, 0, 9, 0, 10, 0, 10, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18};
     private static int[] mezonektulajdonosa = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
@@ -226,10 +226,10 @@ public class Model {
 
     public void move() {
         int pos = jatekosok.get(kinekALepese).getPos();
-        if ((pos + kocka) >= 31) {
+        if ((pos + kocka) >= 32) {
             jatekosok.get(kinekALepese).startMezoKredit();
         }
-        jatekosok.get(kinekALepese).setPos((pos + kocka) % 31);
+        jatekosok.get(kinekALepese).setPos((pos + kocka) % 32);
     }
 
     public void neptunMezo() {
