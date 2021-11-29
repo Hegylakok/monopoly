@@ -1121,7 +1121,7 @@ public class Tabla extends javax.swing.JFrame {
 
             kovetkezojatekosgomb.setVisible(true);
 
-            if (Start.model.getMezonektulajdonosa() == -1 ) {
+            if (Start.model.getMezonektulajdonosa() == -1 && Start.model.vanElegendoKredit()) {
                 vasarlas.setVisible(true);
             };
         }

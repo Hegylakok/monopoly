@@ -256,4 +256,9 @@ public class Model {
         return arr;
     }
 
+    public boolean vanElegendoKredit() {
+        int jatekos = jatekosok.get(kinekALepese).getKredit();
+        int mezo = Integer.parseInt(getMezoAra());
+				return jatekos >= mezo;
+		}
 }
