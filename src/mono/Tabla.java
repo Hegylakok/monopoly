@@ -1120,7 +1120,10 @@ public class Tabla extends javax.swing.JFrame {
             };
 
             kovetkezojatekosgomb.setVisible(true);
-            vasarlas.setVisible(false);
+
+            if (Start.model.getMezonektulajdonosa() == -1 ) {
+                vasarlas.setVisible(true);
+            };
         }
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -1168,9 +1171,9 @@ public class Tabla extends javax.swing.JFrame {
         };
 
         Start.model.kovJatekos();
-				if (Start.model.getMezonektulajdonosa() == -1 ) {
-            vasarlas.setVisible(true);
-				};
+
+        vasarlas.setVisible(false);
+
         kovetkezojatekosgomb.setVisible(false);
         jatekos.setText((String) Start.model.getName());
         mezonev.setText(Start.model.getMezo());

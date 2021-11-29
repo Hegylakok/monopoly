@@ -21,7 +21,8 @@ public class Model {
     private static String[] mezoara = {"0", "2", "0", "3", "0", "5", "0", "6", "0", "8", "0", "10", "0", "12", "0", "12", "0", "14", "0", "14", "0", "16", "0", "18", "0", "20", "0", "20", "0",
         "22", "0", "24"};
     private static int[] mezotranzakcio = {0, 2, 0, 3, 0, 4, 0, 4, 0, 6, 0, 8, 0, 9, 0, 9, 0, 10, 0, 10, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18};
-    private static int[] mezonektulajdonosa = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+		/* -1: vásárolható, -2: nem vásárolható */
+    private static int[] mezonektulajdonosa = {-2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1, -2, -1};
 
     private static String[][] neptunok = {
         {"Értesítés önköltséges formára történő átsorolásról", "Nagy Béla", "", "Mivel már önköltséges képzésen veszel részt, ezért 8 kreditet vesztettél.", "-8"},
@@ -88,6 +89,7 @@ public class Model {
         return mezoara[jatekosok.get(kinekALepese).getPos()];
     }
 
+		/* ha ezt nem tulajdonolt mezön hivjuk meg akkor összeomlik a program */ 
     public int getMezonektulajdonosa() {
         return mezonektulajdonosa[jatekosok.get(kinekALepese).getPos()];
     }
@@ -211,7 +213,7 @@ public class Model {
 
         if (pos == 4 || pos == 12 || pos == 16 || pos == 20 || pos == 28) {
             neptunMezo();
-        } else if (getMezonektulajdonosa() != -1) {
+        } else if (getMezonektulajdonosa() >= 0) {
             /* levonjuk az aktív játékosnak */
             jatekosok.get(kinekALepese).setKredit(kredit - getMezotranzakcio());
             /* hozzáadjuk a mezö tulajdonosának */
@@ -219,8 +221,8 @@ public class Model {
                     jatekosok.get(getMezonektulajdonosa()).getKredit() + getMezotranzakcio()
             );
 
-			/* debug */
-			System.out.println(jatekosok.get(kinekALepese).getName() + " kifizetett " + getMezotranzakcio() + " kredited " + jatekosok.get(getMezonektulajdonosa()).getName() + " számára.");
+            /* debug */
+            System.out.println(jatekosok.get(kinekALepese).getName() + " kifizetett " + getMezotranzakcio() + " kredited " + jatekosok.get(getMezonektulajdonosa()).getName() + " számára.");
         };
     }
 
