@@ -1,9 +1,13 @@
 package mono;
 
-public class Neptunuzenetjelzes extends javax.swing.JFrame {
+/**
+ * Neptun mező által kiváltott, neptun üzenet felugró ablak, ami megelőzi az üzenet részleteit megjelenítő frame-t
+ * @author Hegylakók
+ */
+public class NeptunUzenetJelzes extends javax.swing.JFrame {
     private int mouseX;
     private int mouseY;
-    public Neptunuzenetjelzes() {
+    public NeptunUzenetJelzes() {
         initComponents();
     }
 
@@ -12,7 +16,7 @@ public class Neptunuzenetjelzes extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        TovabbGomb = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setUndecorated(true);
@@ -30,14 +34,14 @@ public class Neptunuzenetjelzes extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(null);
 
-        jButton1.setText("Tovább");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        TovabbGomb.setText("Tovább");
+        TovabbGomb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                TovabbGombActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(10, 140, 69, 23);
+        jPanel1.add(TovabbGomb);
+        TovabbGomb.setBounds(10, 140, 69, 23);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/neptunuzenet.png"))); // NOI18N
         jPanel1.add(jLabel2);
@@ -57,12 +61,12 @@ public class Neptunuzenetjelzes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void TovabbGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TovabbGombActionPerformed
         Uzenet t = new Uzenet();
         t.setVisible(true);
         t.setLocationRelativeTo(null);
         setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_TovabbGombActionPerformed
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         mouseX = evt.getX();
@@ -76,13 +80,13 @@ public class Neptunuzenetjelzes extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Neptunuzenetjelzes().setVisible(true);
+                new NeptunUzenetJelzes().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton TovabbGomb;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

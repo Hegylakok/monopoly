@@ -9,7 +9,7 @@ import static java.lang.ModuleLayer.empty;
 import static java.util.Optional.empty;
 
 /**
- *
+ * A játékot elindító felület, ahol a játékosok mennyiségét és neveiket megadják a felhasználók.
  * @author dalos
  */
 public class Start extends javax.swing.JFrame {
@@ -57,6 +57,7 @@ public class Start extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
+        infoGomb = new javax.swing.JLabel();
 
         setTitle("ELTE Monopoly - Savaria Edition");
         setLocation(new java.awt.Point(0, 0));
@@ -150,18 +151,21 @@ public class Start extends javax.swing.JFrame {
         elsoJatekos.setEditable(false);
         elsoJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
         elsoJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        elsoJatekos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(elsoJatekos);
         elsoJatekos.setBounds(50, 360, 140, 30);
 
         masodikJatekos.setEditable(false);
         masodikJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
         masodikJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        masodikJatekos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(masodikJatekos);
         masodikJatekos.setBounds(210, 360, 140, 30);
 
         harmadikJatekos.setEditable(false);
         harmadikJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
         harmadikJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        harmadikJatekos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         harmadikJatekos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 harmadikJatekosActionPerformed(evt);
@@ -173,6 +177,7 @@ public class Start extends javax.swing.JFrame {
         negyedikJatekos.setEditable(false);
         negyedikJatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
         negyedikJatekos.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        negyedikJatekos.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jPanel1.add(negyedikJatekos);
         negyedikJatekos.setBounds(540, 360, 150, 30);
         jPanel1.add(jSeparator1);
@@ -214,6 +219,18 @@ public class Start extends javax.swing.JFrame {
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel1.add(jSeparator6);
         jSeparator6.setBounds(700, 240, 10, 160);
+
+        infoGomb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoGomb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/info_32px.png"))); // NOI18N
+        infoGomb.setToolTipText("Játékszabály");
+        infoGomb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        infoGomb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoGombMouseClicked(evt);
+            }
+        });
+        jPanel1.add(infoGomb);
+        infoGomb.setBounds(700, 10, 30, 32);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -312,6 +329,12 @@ public class Start extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jatekosokSzamaItemStateChanged
 
+    private void infoGombMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoGombMouseClicked
+        Informacio t = new Informacio();
+        t.setVisible(true);
+        t.setLocationRelativeTo(null);
+    }//GEN-LAST:event_infoGombMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -350,6 +373,7 @@ public class Start extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField elsoJatekos;
     private javax.swing.JTextField harmadikJatekos;
+    private javax.swing.JLabel infoGomb;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

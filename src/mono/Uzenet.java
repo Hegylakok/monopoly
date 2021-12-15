@@ -6,7 +6,7 @@
 package mono;
 
 /**
- *
+ * A Neptun üzenet megjelenítéséért felelős osztály.
  * @author dalos
  */
 public class Uzenet extends javax.swing.JFrame {

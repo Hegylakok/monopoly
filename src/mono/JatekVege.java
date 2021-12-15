@@ -5,16 +5,20 @@
 package mono;
 
 /**
- *
- * @author kakas-ab
+ * A Játék Vége frame megjelenítéséért felelős osztály.
+ * @author Hegylakók
  */
 public class JatekVege extends javax.swing.JFrame {
 
+    private int mouseX;
+    private int mouseY;
+    
     /**
      * Creates new form JatekVege
      */
     public JatekVege() {
         initComponents();
+        gyoztesNeve.setText(Start.model.getJatekosok().get(Start.model.getAktivJatekos()).getNév());
     }
 
     /**
@@ -26,21 +30,92 @@ public class JatekVege extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        kilepesGomb = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        gyoztesNeve = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel1MouseDragged(evt);
+            }
+        });
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
+        jPanel1.setLayout(null);
+
+        kilepesGomb.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        kilepesGomb.setText("Kilépés");
+        kilepesGomb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kilepesGombActionPerformed(evt);
+            }
+        });
+        jPanel1.add(kilepesGomb);
+        kilepesGomb.setBounds(10, 420, 100, 29);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Győztes:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(0, 360, 740, 40);
+
+        gyoztesNeve.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        gyoztesNeve.setForeground(new java.awt.Color(255, 255, 255));
+        gyoztesNeve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gyoztesNeve.setText("...");
+        jPanel1.add(gyoztesNeve);
+        gyoztesNeve.setBounds(0, 400, 740, 40);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Játék vége");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(0, 50, 740, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/Diploma.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(3, 3, 739, 454);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void kilepesGombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kilepesGombActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_kilepesGombActionPerformed
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        mouseX = evt.getX();
+        mouseY = evt.getY();
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
+    }//GEN-LAST:event_jPanel1MouseDragged
 
     /**
      * @param args the command line arguments
@@ -78,5 +153,11 @@ public class JatekVege extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel gyoztesNeve;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton kilepesGomb;
     // End of variables declaration//GEN-END:variables
 }

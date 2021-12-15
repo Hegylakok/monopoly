@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * A tábla grafikus megjelenítéséért felelős osztály.
  * @author dalos
  */
 public class Tabla extends javax.swing.JFrame {
@@ -26,7 +27,7 @@ public class Tabla extends javax.swing.JFrame {
         initComponents();
         buildCollections();
         Start.model.kezdoPoziciok();
-        rajzolBabuk(Start.model.pos());
+        rajzolBabuk(Start.model.poz());
         jatekos.setText((String) Start.model.getName());
         kredit.setText(String.valueOf(Start.model.getKredit()));
         vasarlas.setVisible(false);
@@ -190,10 +191,11 @@ public class Tabla extends javax.swing.JFrame {
         Mezo28 = new javax.swing.JLabel();
         Mezo30 = new javax.swing.JLabel();
         Mezo32 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        dobokocka = new javax.swing.JLabel();
         neptunUzenet = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Tabla = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         kezdokerdit1 = new javax.swing.JPanel();
         mezonev = new javax.swing.JLabel();
         kezdokerdit = new javax.swing.JLabel();
@@ -208,6 +210,9 @@ public class Tabla extends javax.swing.JFrame {
         birtokoltmezo = new javax.swing.JLabel();
         kilepesPanel = new javax.swing.JPanel();
         kilepesGomb = new javax.swing.JLabel();
+        infoGomb = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
@@ -821,14 +826,15 @@ public class Tabla extends javax.swing.JFrame {
         jPanel1.add(Mezo32);
         Mezo32.setBounds(538, 89, 67, 26);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png"))); // NOI18N
+        dobokocka.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dobokocka.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                dobokockaMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(450, 480, 73, 70);
+        jPanel1.add(dobokocka);
+        dobokocka.setBounds(450, 480, 73, 70);
 
         neptunUzenet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/neptunkartya.png"))); // NOI18N
         neptunUzenet.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -849,83 +855,99 @@ public class Tabla extends javax.swing.JFrame {
         jPanel1.add(Tabla);
         Tabla.setBounds(0, 0, 730, 723);
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
         kezdokerdit1.setBackground(new java.awt.Color(255, 255, 255));
         kezdokerdit1.setLayout(null);
 
         mezonev.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        mezonev.setForeground(new java.awt.Color(204, 0, 51));
+        mezonev.setForeground(new java.awt.Color(204, 0, 0));
         mezonev.setText("Start!");
         mezonev.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         kezdokerdit1.add(mezonev);
-        mezonev.setBounds(140, 500, 380, 60);
+        mezonev.setBounds(170, 340, 190, 110);
 
         kezdokerdit.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         kezdokerdit.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         kezdokerdit.setText("Mező:");
         kezdokerdit1.add(kezdokerdit);
-        kezdokerdit.setBounds(20, 500, 110, 30);
+        kezdokerdit.setBounds(50, 340, 110, 30);
 
         kredit.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         kredit.setForeground(new java.awt.Color(204, 0, 51));
         kezdokerdit1.add(kredit);
-        kredit.setBounds(140, 460, 150, 30);
+        kredit.setBounds(170, 300, 150, 30);
 
         jatekos.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         jatekos.setForeground(new java.awt.Color(204, 0, 51));
         kezdokerdit1.add(jatekos);
-        jatekos.setBounds(140, 420, 260, 30);
+        jatekos.setBounds(170, 260, 190, 30);
 
         vasarlas.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         vasarlas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         vasarlas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/mezovasarlas.png"))); // NOI18N
+        vasarlas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         vasarlas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 vasarlasMouseClicked(evt);
             }
         });
         kezdokerdit1.add(vasarlas);
-        vasarlas.setBounds(0, 620, 172, 64);
+        vasarlas.setBounds(0, 660, 172, 64);
 
         kovetkezojatekosgomb.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         kovetkezojatekosgomb.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         kovetkezojatekosgomb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kovetkezojatekos.png"))); // NOI18N
+        kovetkezojatekosgomb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         kovetkezojatekosgomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kovetkezojatekosgombMouseClicked(evt);
             }
         });
         kezdokerdit1.add(kovetkezojatekosgomb);
-        kovetkezojatekosgomb.setBounds(180, 620, 172, 64);
+        kovetkezojatekosgomb.setBounds(180, 660, 172, 64);
 
-        vasarlasara.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        vasarlasara.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         vasarlasara.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kezdokerdit1.add(vasarlasara);
-        vasarlasara.setBounds(0, 580, 350, 30);
+        vasarlasara.setBounds(0, 440, 350, 30);
 
         birtokoltmezoszama.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        birtokoltmezoszama.setForeground(new java.awt.Color(255, 255, 255));
         birtokoltmezoszama.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         birtokoltmezoszama.setText("Birtokolt mezők száma:");
         kezdokerdit1.add(birtokoltmezoszama);
-        birtokoltmezoszama.setBounds(0, 0, 280, 40);
+        birtokoltmezoszama.setBounds(0, 90, 280, 40);
 
         nevkiir.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         nevkiir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nevkiir.setText("Játékos:");
         kezdokerdit1.add(nevkiir);
-        nevkiir.setBounds(20, 420, 110, 30);
+        nevkiir.setBounds(50, 260, 110, 30);
 
         kezdokerdit2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         kezdokerdit2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         kezdokerdit2.setText("Kredit:");
         kezdokerdit1.add(kezdokerdit2);
-        kezdokerdit2.setBounds(20, 460, 110, 30);
+        kezdokerdit2.setBounds(50, 300, 110, 30);
 
         birtokoltmezo.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
-        birtokoltmezo.setForeground(new java.awt.Color(204, 0, 51));
+        birtokoltmezo.setForeground(new java.awt.Color(255, 255, 255));
         kezdokerdit1.add(birtokoltmezo);
-        birtokoltmezo.setBounds(288, 7, 70, 30);
+        birtokoltmezo.setBounds(280, 100, 70, 30);
 
-        kilepesPanel.setBackground(new java.awt.Color(204, 0, 51));
+        kilepesPanel.setBackground(new java.awt.Color(255, 255, 255));
+        kilepesPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        kilepesPanel.setDoubleBuffered(false);
         kilepesPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 kilepesPanelMousePressed(evt);
@@ -935,10 +957,22 @@ public class Tabla extends javax.swing.JFrame {
         kilepesGomb.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         kilepesGomb.setForeground(new java.awt.Color(255, 255, 255));
         kilepesGomb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        kilepesGomb.setText("X");
+        kilepesGomb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/Actions-window-close-icon.png"))); // NOI18N
+        kilepesGomb.setToolTipText("Kilépés");
+        kilepesGomb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         kilepesGomb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kilepesGombMouseClicked(evt);
+            }
+        });
+
+        infoGomb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        infoGomb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/info_32px.png"))); // NOI18N
+        infoGomb.setToolTipText("Játékszabály");
+        infoGomb.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        infoGomb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoGombMouseClicked(evt);
             }
         });
 
@@ -946,12 +980,59 @@ public class Tabla extends javax.swing.JFrame {
         kilepesPanel.setLayout(kilepesPanelLayout);
         kilepesPanelLayout.setHorizontalGroup(
             kilepesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kilepesGomb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(kilepesPanelLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(infoGomb, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(kilepesGomb))
         );
         kilepesPanelLayout.setVerticalGroup(
             kilepesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kilepesGomb, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addGroup(kilepesPanelLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addGroup(kilepesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(kilepesGomb)
+                    .addComponent(infoGomb)))
         );
+
+        kezdokerdit1.add(kilepesPanel);
+        kilepesPanel.setBounds(270, 0, 90, 50);
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setMinimumSize(new java.awt.Dimension(350, 2));
+        jPanel2.setPreferredSize(new java.awt.Dimension(350, 2));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        kezdokerdit1.add(jPanel2);
+        jPanel2.setBounds(0, 250, 350, 2);
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setMinimumSize(new java.awt.Dimension(350, 2));
+        jPanel3.setPreferredSize(new java.awt.Dimension(350, 2));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 2, Short.MAX_VALUE)
+        );
+
+        kezdokerdit1.add(jPanel3);
+        jPanel3.setBounds(0, 480, 350, 2);
 
         javax.swing.GroupLayout hatterLayout = new javax.swing.GroupLayout(hatter);
         hatter.setLayout(hatterLayout);
@@ -961,24 +1042,28 @@ public class Tabla extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(kilepesPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hatterLayout.createSequentialGroup()
-                        .addComponent(kezdokerdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addComponent(kezdokerdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(hatterLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         hatterLayout.setVerticalGroup(
             hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(hatterLayout.createSequentialGroup()
-                .addGroup(hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(hatterLayout.createSequentialGroup()
-                        .addComponent(kilepesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(kezdokerdit1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(hatterLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 11, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(hatterLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(kezdokerdit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(hatterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(hatterLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -996,6 +1081,9 @@ public class Tabla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    /**
+     * A a modellben generált számnak megfelelően megjeleníti a kockát.
+     */
     private void rajzolKocka() {
         int dobas = Start.model.getKocka();
         String s = String.valueOf(dobas);
@@ -1003,26 +1091,30 @@ public class Tabla extends javax.swing.JFrame {
 
         switch (dobas) {
             case 1:
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png")));
+                dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/egy.png")));
                 break;
             case 2:
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ketto.png")));
+                dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ketto.png")));
                 break;
             case 3:
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/harom.png")));
+                dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/harom.png")));
                 break;
             case 4:
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/negy.png")));
+                dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/negy.png")));
                 break;
             case 5:
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ot.png")));
+                dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/ot.png")));
                 break;
             case 6:
-                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/hat.png")));
+                dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/hat.png")));
                 break;
         };
     }
 
+    /**
+     * A modellnek megfelelően megjeleníti a tábla mezőin a játékosok bábuit
+     * @param pos A játékosok pozícióit tároló tömb, ha -1 érték szerepel akkor a játékos nincs a táblán.
+     */
     private void rajzolBabuk(int[] pos) {
         ArrayList<javax.swing.JLabel> sargaArrayList = new ArrayList<javax.swing.JLabel>(sargaCollection);
         ArrayList<javax.swing.JLabel> pirosArrayList = new ArrayList<javax.swing.JLabel>(pirosCollection);
@@ -1049,33 +1141,45 @@ public class Tabla extends javax.swing.JFrame {
             zoldArrayList.get(pos[3]).setVisible(true);
         }
     }
+    
+    /**
+     * "Neptun üzenete érkezett" felugró ablak megjelenítése.
+     */
+    private void rajzolNeptunUzenetJelzes() {
+        NeptunUzenetJelzes t = new NeptunUzenetJelzes();
+        t.setVisible(true);
+        t.setLocationRelativeTo(null);
+    }
 
-	private void rajzolTulaj() {
-		ArrayList<javax.swing.JLabel> lista = new ArrayList<javax.swing.JLabel>(tulajCollection);
+    /**
+     * A mezők tulajdonos jelző téglalapáainak megjelenítése a modellben szereplő adatok alapján.
+     */
+    private void rajzolTulaj() {
+        ArrayList<javax.swing.JLabel> lista = new ArrayList<javax.swing.JLabel>(tulajCollection);
 
-		int listaIndex = 0;
-		int modelIndex = 1;
-		while (listaIndex < 16) {
-			int tulaj = Start.model.getMezonektulajdonosa(modelIndex);
-			switch (tulaj) {
-			case 0:
-				lista.get(listaIndex).setBackground(new java.awt.Color(229, 217, 0));
-				break;
-			case 1:
-				lista.get(listaIndex).setBackground(new java.awt.Color(236, 28, 36));
-				break;
-			case 2:
-				lista.get(listaIndex).setBackground(new java.awt.Color(0, 0, 255));
-				break;
-			case 3:
-				lista.get(listaIndex).setBackground(new java.awt.Color(14, 209, 69));
-				break;
-			}
+        int listaIndex = 0;
+        int modelIndex = 1;
+        while (listaIndex < 16) {
+            int tulaj = Start.model.getMezonektulajdonosa(modelIndex);
+            switch (tulaj) {
+            case 0:
+                lista.get(listaIndex).setBackground(new java.awt.Color(229, 217, 0));
+                break;
+            case 1:
+                lista.get(listaIndex).setBackground(new java.awt.Color(236, 28, 36));
+                break;
+            case 2:
+                lista.get(listaIndex).setBackground(new java.awt.Color(0, 0, 255));
+                break;
+            case 3:
+                lista.get(listaIndex).setBackground(new java.awt.Color(14, 209, 69));
+                break;
+            }
 
-			listaIndex += 1;
-			modelIndex += 2;
-		}
-	}
+            listaIndex += 1;
+            modelIndex += 2;
+        }
+    }
 
     private void kiirMezo() {
         String s = Start.model.getMezo();
@@ -1084,7 +1188,7 @@ public class Tabla extends javax.swing.JFrame {
 
     private void kiirMezoAra() {
         if (Integer.parseInt(Start.model.getMezoAra()) == 0) {
-            vasarlasara.setText("Nem megvásárolható mező!");
+            vasarlasara.setText("Nem megvásárolható mező");
             vasarlas.setVisible(false);
         }
         if (Integer.parseInt(Start.model.getMezoAra()) > 0) {
@@ -1092,9 +1196,12 @@ public class Tabla extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * A kocka "forgó" állapotába hozása. Felkészül a program a bábu léptetésére. Ilyenkor vállik klikkelhetővé.
+     */
     private void kockaForog() {
             kovetkezojatekosgomb.setVisible(false);
-            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
+            dobokocka.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Kepek/kockagif.gif")));
             jatekos.setText((String) Start.model.getName());
             kredit.setText(String.valueOf(Start.model.getKredit()));
             birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
@@ -1103,14 +1210,22 @@ public class Tabla extends javax.swing.JFrame {
             kockaKlikkelheto = true;
     }
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    /**
+     * A kocka klikkelése. Ez által lépteti a játékos a bábuját a táblán.
+     * @param evt 
+     */
+    private void dobokockaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dobokockaMouseClicked
         if (kockaKlikkelheto) {
             Start.model.dobas();
             rajzolKocka();
-            Start.model.move();
+            Start.model.mozgat();
             mezonev.setText(Start.model.getMezo());
-            rajzolBabuk(Start.model.pos());
+            rajzolBabuk(Start.model.poz());
             Start.model.mezoHatasa();
+            if (Start.model.isKellMegjeleniteniNeptunt()) {
+                rajzolNeptunUzenetJelzes();
+                Start.model.setKellMegjeleniteniNeptunt(false);
+            }
             jatekos.setText((String) Start.model.getName());
             kredit.setText(String.valueOf(Start.model.getKredit()));
             birtokoltmezo.setText(String.valueOf(Start.model.getBirtokoltMezoSzama()));
@@ -1128,7 +1243,7 @@ public class Tabla extends javax.swing.JFrame {
 			
             kockaKlikkelheto = false;
         }
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_dobokockaMouseClicked
 
     private void neptunUzenetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_neptunUzenetMouseClicked
     }//GEN-LAST:event_neptunUzenetMouseClicked
@@ -1142,14 +1257,6 @@ public class Tabla extends javax.swing.JFrame {
         setLocation(getX() + evt.getX() - mouseX, getY() + evt.getY() - mouseY);
     }//GEN-LAST:event_formMouseDragged
 
-    private void kilepesGombMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kilepesGombMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_kilepesGombMouseClicked
-
-    private void kilepesPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kilepesPanelMousePressed
-        System.exit(0);
-    }//GEN-LAST:event_kilepesPanelMousePressed
-
     private void vasarlasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vasarlasMouseClicked
         if (Start.model.getKredit() >= Integer.parseInt(Start.model.getMezoAra()) && Integer.parseInt(Start.model.getMezoAra()) > 0) {
             jatekos.setText((String) Start.model.getName());
@@ -1161,10 +1268,14 @@ public class Tabla extends javax.swing.JFrame {
             kovetkezojatekosgomb.setVisible(true);
             vasarlas.setVisible(false);
             kockaKlikkelheto = false;
-			rajzolTulaj();
+            rajzolTulaj();
         }
     }//GEN-LAST:event_vasarlasMouseClicked
 
+    /**
+     * A következő játékos gomb.
+     * @param evt 
+     */
     private void kovetkezojatekosgombMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kovetkezojatekosgombMouseClicked
         if (Start.model.isJatekVege()) {
             JatekVege jatekVege = new JatekVege();
@@ -1187,6 +1298,24 @@ public class Tabla extends javax.swing.JFrame {
 
         kockaForog();
     }//GEN-LAST:event_kovetkezojatekosgombMouseClicked
+
+    private void kilepesPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kilepesPanelMousePressed
+
+    }//GEN-LAST:event_kilepesPanelMousePressed
+
+    private void kilepesGombMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kilepesGombMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_kilepesGombMouseClicked
+
+    /**
+     * Megjeleníti az információs ablakot a játék szabályairól.
+     * @param evt 
+     */
+    private void infoGombMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoGombMouseClicked
+        Informacio t = new Informacio();
+        t.setVisible(true);
+        t.setLocationRelativeTo(null);
+    }//GEN-LAST:event_infoGombMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1224,13 +1353,12 @@ public class Tabla extends javax.swing.JFrame {
         });
     }
 
-	boolean kockaKlikkelheto = false;
+    boolean kockaKlikkelheto = false;
     private Collection sargaCollection = new ArrayList();
     private Collection pirosCollection = new ArrayList();
     private Collection kekCollection = new ArrayList();
     private Collection zoldCollection = new ArrayList();
-    private Collection mezoCollection = new ArrayList();
-		private Collection tulajCollection = new ArrayList();
+    private Collection tulajCollection = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Kek1;
@@ -1380,10 +1508,14 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JLabel Zold9;
     private javax.swing.JLabel birtokoltmezo;
     private javax.swing.JLabel birtokoltmezoszama;
+    private javax.swing.JLabel dobokocka;
     private javax.swing.JPanel hatter;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel infoGomb;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel jatekos;
     private javax.swing.JLabel kezdokerdit;
     private javax.swing.JPanel kezdokerdit1;
@@ -1533,22 +1665,21 @@ public class Tabla extends javax.swing.JFrame {
         pirosCollection.add(Piros31);
         pirosCollection.add(Piros32);
 
-		tulajCollection.add(Mezo2);
-		tulajCollection.add(Mezo4);
-		tulajCollection.add(Mezo6);
-		tulajCollection.add(Mezo8);
-		tulajCollection.add(Mezo10);
-		tulajCollection.add(Mezo12);
-		tulajCollection.add(Mezo14);
-		tulajCollection.add(Mezo16);
-		tulajCollection.add(Mezo18);
-		tulajCollection.add(Mezo20);
-		tulajCollection.add(Mezo22);
-		tulajCollection.add(Mezo24);
-		tulajCollection.add(Mezo26);
-		tulajCollection.add(Mezo28);
-		tulajCollection.add(Mezo30);
-		tulajCollection.add(Mezo32);
-}
-;
+        tulajCollection.add(Mezo2);
+        tulajCollection.add(Mezo4);
+        tulajCollection.add(Mezo6);
+        tulajCollection.add(Mezo8);
+        tulajCollection.add(Mezo10);
+        tulajCollection.add(Mezo12);
+        tulajCollection.add(Mezo14);
+        tulajCollection.add(Mezo16);
+        tulajCollection.add(Mezo18);
+        tulajCollection.add(Mezo20);
+        tulajCollection.add(Mezo22);
+        tulajCollection.add(Mezo24);
+        tulajCollection.add(Mezo26);
+        tulajCollection.add(Mezo28);
+        tulajCollection.add(Mezo30);
+        tulajCollection.add(Mezo32);
+    }
 }
