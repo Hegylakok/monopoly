@@ -258,11 +258,27 @@ public class Start extends javax.swing.JFrame {
         model.setJatekosMennyiseg(jatekosszam);
         Tabla t = new Tabla();
 
-        model.setName(0, elsoJatekos.getText());
-        model.setName(1, masodikJatekos.getText());
-        model.setName(2, harmadikJatekos.getText());
-        model.setName(3, negyedikJatekos.getText());
-
+        if(elsoJatekos.getText().isEmpty()){
+            model.setName(0, "Sárga");
+        } else {
+            model.setName(0, elsoJatekos.getText());
+        }
+        if(masodikJatekos.getText().isEmpty()){
+            model.setName(1, "Piros");
+        } else {
+            model.setName(1, masodikJatekos.getText());
+        }
+        if(harmadikJatekos.getText().isEmpty()){
+            model.setName(2, "Kék");
+        } else {
+            model.setName(2, harmadikJatekos.getText());        
+        }
+        if(negyedikJatekos.getText().isEmpty()){
+            model.setName(3, "Zöld");
+        } else {
+            model.setName(3, negyedikJatekos.getText());
+        }
+        
         t.setVisible(true);
         t.setLocationRelativeTo(null);
         setVisible(false);
